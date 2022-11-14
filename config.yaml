@@ -69,11 +69,11 @@ sequence:
     - name: Request-Response Cycle
       pursuit_path: request-response-cycle
       kind: lesson
-      activity: repository
+      activity: ~ #none
     - name: Document Object Model
       pursuit_path: document-object-model
       kind: lesson
-      activity: repository
+      activity: ~ # none
     - name: Reading and Deleting DOM Elements
       pursuit_path: reading-deleting-dom-elements
       kind: lesson
@@ -94,7 +94,7 @@ sequence:
     - name: API Calls with Postman
       pursuit_path: api-calls-with-postman
       kind: lesson
-      activity: repository
+      activity: ~ # none
     - name: Deployment
       pursuit_path: api-calls-with-postman
       kind: guide # ????????
@@ -113,12 +113,12 @@ sequence:
       activity: repository
       points_possible: 9
     - name: Front-end Portfolio Project
-      pursuit_path: project-front-end-portfolio-project
+      pursuit_path: project-front-end-portfolio
       kind: project
       activity: repository
       points_possible: 29
     - name: End of Module
-      pursuit_path: final-front-end-web-development
+      pursuit_path: assessment-final-fewd
       kind: assessment
       activity: repository
       points_possible: 9

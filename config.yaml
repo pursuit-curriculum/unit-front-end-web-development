@@ -3,131 +3,125 @@ details:
   repository_name: unit-front-end-web-development
 
 sequence:
-  JavaScript Utilities:
+  JavaScript Utilities (Built-in Methods -> Error Handling):
     - name: Unit 2 Launch
       elements:
         - kind: deck
         - kind: recording
-    - name: Introduction to Algorithms
-      pursuit_path: intro-to-algorithms
+    - name: Built-in Methods
+      pursuit_path: built-in-methods
       kind: lesson
-      activity: canvas_text
-      activity_description: "To complete this lab, you will need to write an algorithm in plain language. You will not need to write any code to complete this Lab.
-
-      Write an algorithm that achieves the following outcome: looking up a word in an online or physical dictionary. Keep in mind any inputs a person may need and the desired output. Additionally, focus on designing for the default scenario (i.e. 'happy path') before thinking about edge cases. If there are any edge cases you think are important to keep in mind, include them at the end.
-
-      Do not spend more than 30 - 45 minutes on this Lab."
-    - name: Computer Setup and Installation
-      elements:
-        - kind: guide
-          pursuit_path: computer-setup
-        - kind: recording
-    - name: Introduction to JavaScript
-      pursuit_path: intro-to-javascript
+      activity: repository
+    - name: Modern JavaScript Features
+      pursuit_path: modern-javascript-features
       kind: lesson
-      activity: replit
-    - name: Control Flow
-      pursuit_path: control-flow
+      activity: repository
+    - name: Higher Order Functions
+      pursuit_path: higher-order-functions
       kind: lesson
-      activity: replit
-    - name: Functions
-      pursuit_path: functions
+      activity: repository
+    - name: Higher Order Native Array Methods
+      pursuit_path: higher-order-native-array-methods
       kind: lesson
-      activity: replit
-    - name: Understanding Code Challenges
-      pursuit_path: understanding-code-challenges
+      activity: repository
+    - name: Error Handling
+      pursuit_path: error-handling
       kind: lesson
-      activity: replit
-    - name: Scope
-      pursuit_path: scope
-      kind: lesson
-      activity: replit
-    - name: Arrays
-      pursuit_path: arrays
-      kind: lesson
-      activity: replit
-    - name: Common Methods and Tools
-      pursuit_path: common-methods-and-tools
-      kind: lesson
-      activity: replit
-    - name: Objects
-      pursuit_path: objects
-      kind: lesson
-      activity: replit
-    - name: Evaluating Expressions
-      pursuit_path: evaluating-expressions
-      kind: lesson
-      activity: replit
-    - name: Data Representation with Code
-      pursuit_path: data-representation-with-code
-      kind: lesson
-      activity: replit
-    - name: Common Errors
-      pursuit_path: common-errors
-      kind: lesson
-      activity: replit
-    - name: Loops
-      pursuit_path: loops
-      kind: lesson
-      activity: replit
-    - name: Problem Solving Methodologies
-      pursuit_path: problem-solving-methodologies
-      kind: lesson
-      activity: replit
-    - name: Early JavaScript
-      pursuit_path: early-javascript-assessment
-      kind: assessment
-      activity: replit
-      points_possible: 7
+      activity: repository
+    - name: Mid-module front-end-web-development assessment
+      pursuit_path: ????????????????????????
+      kind: ????????????????????????
+      activity: ????????????????????????
   HTML & CSS:
-    - name: Collaborative Programming
-      pursuit_path: collaborative-programming
-      kind: lesson
-      activity: replit
-    - name: Introduction to the Command Line
-      pursuit_path: intro-to-command-line
+    - name: Introduction to HTML
+      pursuit_path: intro-to-html
       kind: lesson
       activity: repository
-    - name: Git
-      pursuit_path: git
+    - name: Understanding Front-end Tests
+      pursuit_path: understanding-front-end-tests
+      kind: lesson
+      activity: ~ # none
+    - name: Introduction to Forms
+      pursuit_path: intro-to-forms
       kind: lesson
       activity: repository
-    - name: GitHub
-      pursuit_path: github
+    - name: Introduction to CSS
+      pursuit_path: intro-to-css
       kind: lesson
       activity: repository
-    - name: Markdown
-      pursuit_path: markdown
+    - name: CSS selectors
+      pursuit_path: css-selectors
       kind: lesson
       activity: repository
-    - name: JavaScript on Your Machine
-      pursuit_path: javascript-on-your-machine
+    - name: CSS Box Model
+      pursuit_path: css-box-model
       kind: lesson
       activity: repository
-    - name: Reference Types
-      pursuit_path: reference-types
+    - name: CSS Grid
+      pursuit_path: css-grid
       kind: lesson
       activity: repository
-    - name: Skill Sharpening
-      pursuit_path: skill-sharpening
-      kind: project
+    - name: CSS Media Queries
+      pursuit_path: css-media-queries
+      kind: lesson
       activity: repository
-      points_possible: 186
+  DOM Manipulation:
+    - name: Request-Response Cycle
+      pursuit_path: request-response-cycle
+      kind: lesson
+      activity: repository
+    - name: Document Object Model
+      pursuit_path: document-object-model
+      kind: lesson
+      activity: repository
+    - name: Reading and Deleting DOM Elements
+      pursuit_path: reading-deleting-dom-elements
+      kind: lesson
+      activity: repository
+    - name: Creating and Updating DOM elements
+      pursuit_path: creating-updating-dom-elements
+      kind: lesson
+      activity: repository
+    - name: Events
+      pursuit_path: events
+      kind: lesson
+      activity: repository
+    - name: Forms with Events
+      pursuit_path: forms-with-events
+      kind: lesson
+      activity: repository
   Asynchronous Actions (API Calls):
-    - name: Accumulator Pattern
-      pursuit_path: accumulator-pattern
+    - name: API Calls with Postman
+      pursuit_path: api-calls-with-postman
       kind: lesson
       activity: repository
-    - name: Dinosaur Museum
-      pursuit_path: dinosaur-museum
+    - name: Deployment
+      pursuit_path: api-calls-with-postman
+      kind: guide # ????????
+      # activity: repository
+    - name: Promises
+      pursuit_path: promises
+      kind: lesson
+      activity: repository
+    - name: API Calls with Fetch
+      pursuit_path: api-calls-with-fetch
+      kind: lesson
+      activity: repository
+    - name: Weather App Project
+      pursuit_path: project-weather-app
       kind: project
       activity: repository
-      points_possible: 51
+      points_possible: 9
+    - name: Front-end Portfolio Project
+      pursuit_path: project-front-end-portfolio-project
+      kind: project
+      activity: repository
+      points_possible: 29
     - name: End of Module
-      pursuit_path: final-fundamentals
+      pursuit_path: final-front-end-web-development
       kind: assessment
       activity: repository
-      points_possible: 31
+      points_possible: 9
     - name: End of Module Reflection
       elements:
         - kind: deck

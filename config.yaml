@@ -108,17 +108,17 @@ sequence:
       kind: lesson
       activity: repository
     - name: Weather App Project
-      pursuit_path: project-weather-app
+      pursuit_path: weather-app
       kind: project
       activity: repository
       points_possible: 9
     - name: Front-end Portfolio Project
-      pursuit_path: project-front-end-portfolio
+      pursuit_path: front-end-portfolio
       kind: project
       activity: repository
       points_possible: 29
     - name: End of Module
-      pursuit_path: assessment-final-fewd
+      pursuit_path: final-fewd
       kind: assessment
       activity: repository
       points_possible: 9

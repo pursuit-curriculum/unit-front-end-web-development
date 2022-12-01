@@ -38,6 +38,12 @@ sequence:
       pursuit_path: intro-to-html
       kind: lesson
       activity: repository
+    - name: Deploy with GitHub Pages
+      elements:
+        - kind: guide
+          pursuit_path: deployment
+          pursuit_subpath: github-pages
+        - kind: recording
     - name: Understanding Front-end Tests
       pursuit_path: understanding-front-end-tests
       kind: lesson

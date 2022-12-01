@@ -28,6 +28,7 @@ sequence:
       pursuit_path: error-handling
       kind: lesson
       activity: repository
+      points_possible: 9
     - name: Mid-Unit front-end-web-development assessment
       pursuit_path: mid-fewd
       kind: assessment

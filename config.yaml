@@ -28,10 +28,10 @@ sequence:
       pursuit_path: error-handling
       kind: lesson
       activity: repository
-    - name: Mid-module front-end-web-development assessment
-      pursuit_path: ????????????????????????
-      kind: ????????????????????????
-      activity: ????????????????????????
+    - name: Mid-Unit front-end-web-development assessment
+      pursuit_path: mid-fewd
+      kind: assessment
+      activity: repository
   HTML & CSS:
     - name: Introduction to HTML
       pursuit_path: intro-to-html
@@ -117,12 +117,12 @@ sequence:
       kind: project
       activity: repository
       points_possible: 29
-    - name: End of Module
+    - name: End of Unit
       pursuit_path: final-fewd
       kind: assessment
       activity: repository
       points_possible: 9
-    - name: End of Module Reflection
+    - name: End of Unit Reflection
       elements:
         - kind: deck
         - kind: recording

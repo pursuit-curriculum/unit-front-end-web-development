@@ -103,9 +103,11 @@ sequence:
       kind: lesson
       activity: ~ # none
     - name: Deployment
-      pursuit_path: api-calls-with-postman
-      kind: guide # ????????
-      # activity: repository
+      elements:
+        - kind: guide
+          pursuit_path: deployment
+          pursuit_subpath: github-pages
+        - kind: recording
     - name: Promises
       pursuit_path: promises
       kind: lesson

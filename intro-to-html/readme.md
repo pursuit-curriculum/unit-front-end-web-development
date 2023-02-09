@@ -345,4 +345,4 @@ Yay! But it looks a little... _off_. This is because we specified a height and w
 
 Much better!
 
-> Take a few minutes and add some more images using our favorite placeholder site: [fillmurray](https://www.fillmurray.com)
+> Take a few minutes and add some more images using our favorite placeholder site: [placekitten](https://placekitten.com/)

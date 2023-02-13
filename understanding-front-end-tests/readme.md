@@ -122,7 +122,27 @@ npm install
 npm test
 ```
 
-However, this time instead of sending a lot of output to the terminal, you'll see the terminal print out a few lines and then stop.
+Depending on the script assigned to `npm test`, the output will differ.
+
+#### Run
+
+If the output of the script is `cypress run`, the test output will be similar to what you've seen in the past, although much more verbose. The tests may take a moment to get started.
+
+![Cypress running with `cypress run`.](./assets/cypress-run.png)
+
+You may also see the following show up on your computer.
+
+![Cypress installing on a Mac.](./assets/cypress-install.png)
+
+Once the tests get started, you should see something similar to the following image.
+
+![Cypress run starting.](./assets/cypress-run-starting.png)
+
+Once the run is finished, you will see whether or not the test suites that are a part of the exercise passed. You will also have access to screenshots of what Cypress tried.
+
+#### Open
+
+If the output of the script is `cypress open`, a program should install and open up that will allow you to run your tests in a graphical user interface, or GUI. This can be a bit more complicated but offers better control over how your tests are run.
 
 ![Cypress running in the terminal.](./assets/cypress-terminal.png)
 
@@ -138,7 +158,7 @@ Next, you'll see the Cypress program open up and display something like the foll
 
 This program view will show you what tests exist for the repository as well as let you run them. As you can see, this repository has "2 integration specs": `recipe_spec.js` and `sundial_spec.js`. "Specs", in this case, is just another word for test.
 
-### Running an individual file
+##### Running an individual file
 
 To run an individual file, you can click on the name of the file. This will open up your default browser and run tests in the browser.
 
@@ -158,13 +178,13 @@ As you update the code, you can press the re-run button to check your solution. 
 
 ![Some tests passing via Cypress in a Chrome window.](./assets/cypress-start.png)
 
-### Running all test files
+##### Running all test files
 
 To run all test files, you can press the link that says "Run X integration specs", where "X" is the number of integration specs there are. This will run all of the tests at once.
 
 ![All tests being run via Cypress.](./assets/cypress-full-run.png)
 
-### Quitting Cypress
+##### Quitting Cypress
 
 To quit Cypress, you just need to close the Cypress program. You can do so by selecting the Cypress icon on your dock and press `Cmd` + `Q`, or quitting Cypress from the menu bar.
 

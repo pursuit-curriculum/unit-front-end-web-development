@@ -28,11 +28,11 @@ sequence:
       pursuit_path: error-handling
       kind: lesson
       activity: repository
-      points_possible: 9
     - name: Mid-Unit front-end-web-development assessment
       pursuit_path: mid-fewd
       kind: assessment
       activity: repository
+      points_possible: 7
   HTML & CSS:
     - name: Introduction to HTML
       pursuit_path: intro-to-html

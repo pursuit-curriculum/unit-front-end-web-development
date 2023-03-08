@@ -71,7 +71,7 @@ p {
 
 Media queries start with `@media` and are followed by some kind of condition. Within the curly braces are additional CSS rules that will get applied if the condition is met.
 
-In the above example, all of the rules inside of the media query will be applied if the width of the page is less than 750px. This means that, once the screen is less than 750px wide, the `p` rule inside of the media query will overwrite the earlier `p` rule.
+In the above example, all of the rules inside of the media query will be applied if the width of the page is 750px or more. This means that, once the screen is 750px wide or more, the `p` rule inside of the media query will overwrite the earlier `p` rule.
 
 In general, this is how media queries work: you write your CSS for one size of screen and then write additional rules that lay on top of those styles, for when the screen size changes.
 

@@ -130,7 +130,7 @@ sequence:
       pursuit_path: final-fewd
       kind: assessment
       activity: repository
-      points_possible: 7
+      points_possible: 8
     - name: End of Unit Reflection
       elements:
         - kind: deck

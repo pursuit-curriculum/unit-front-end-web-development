@@ -12,9 +12,9 @@
 
 - Watch the video linked below. Keep in mind the question below the video as you watch.
 
-  [YouTube: How to Pair Program](https://www.youtube.com/watch?v=YhV4TaZaB84)
+[YouTube: How to Pair Program](https://www.youtube.com/watch?v=YhV4TaZaB84)
 
-  - At the beginning of the video, the speaker talks about how he learned more in one day pair programming then he did in the past two years of working on his own. Why do you think that is?
+- At the beginning of the video, the speaker talks about how he learned more in one-day pair programming than in the past two years of working independently. Why do you think that is?
 
 - What are the two roles in pair programming? What is the purpose of each role?
 

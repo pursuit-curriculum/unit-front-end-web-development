@@ -3,36 +3,48 @@ details:
   repository_name: unit-front-end-web-development
 
 sequence:
-  JavaScript Utilities (Built-in Methods -> Error Handling):
+  JavaScript Applications:
     - name: Unit 2 Launch
       elements:
         - kind: deck
         - kind: recording
-    - name: Built-in Methods
-      pursuit_path: built-in-methods
+    - name: Introduction to Code Track
+      pursuit_path: intro-to-codetrack
       kind: lesson
       activity: repository
-    - name: Modern JavaScript Features
-      pursuit_path: modern-javascript-features
+    - name: Collaborative Programming
+      pursuit_path: collaborative-programming
       kind: lesson
       activity: repository
-    - name: Higher Order Functions
-      pursuit_path: higher-order-functions
+    - name: Node & NPM
+      pursuit_path: node-and-npm
       kind: lesson
       activity: repository
-    - name: Higher Order Native Array Methods
-      pursuit_path: higher-order-native-array-methods
+    - name: NPM Packages
+      pursuit_path: npm-packages
+      kind: lesson
+      activity: repository
+    - name: Test-Driven Development with Jest
+      pursuit_path: tdd-w-jest
+      kind: lesson
+      activity: repository
+    - name: JSON and Node Built-in Modules
+      pursuit_path: json-and-node-modules
+      kind: lesson
+      activity: repository
+    - name: Separation of Concerns for Applications
+      pursuit_path: separation-of-concerns
       kind: lesson
       activity: repository
     - name: Error Handling
       pursuit_path: error-handling
       kind: lesson
       activity: repository
-    - name: Mid-Unit front-end-web-development assessment
-      pursuit_path: mid-fewd
-      kind: assessment
+    - name: Command Line Project
+      pursuit_path: command-line
+      kind: project
       activity: repository
-      points_possible: 7
+      points_possible: 100
   HTML & CSS:
     - name: Introduction to HTML
       pursuit_path: intro-to-html
@@ -72,11 +84,6 @@ sequence:
       pursuit_path: css-media-queries
       kind: lesson
       activity: repository
-  DOM Manipulation:
-    - name: Request-Response Cycle
-      pursuit_path: request-response-cycle
-      kind: lesson
-      activity: ~ #none
     - name: Document Object Model
       pursuit_path: document-object-model
       kind: lesson
@@ -89,7 +96,7 @@ sequence:
       pursuit_path: creating-updating-dom-elements
       kind: lesson
       activity: repository
-    - name: Events
+    - name: Events COMBINE WITH FORMS
       pursuit_path: events
       kind: lesson
       activity: repository
@@ -97,8 +104,17 @@ sequence:
       pursuit_path: forms-with-events
       kind: lesson
       activity: repository
+    - name: Front-end Application 
+      pursuit_path: front-end-portfolio
+      kind: project
+      activity: repository
+      points_possible: 100
   Asynchronous Actions (API Calls):
-    - name: API Calls with Postman
+    - name: Request-Response Cycle
+      pursuit_path: request-response-cycle
+      kind: lesson
+      activity: ~ #none
+  - name: API Calls with Postman
       pursuit_path: api-calls-with-postman
       kind: lesson
       activity: ~ # none
@@ -108,29 +124,28 @@ sequence:
           pursuit_path: deployment
           pursuit_subpath: github-pages
         - kind: recording
-    - name: Promises
+    - name: Promises DEPRECIATE
       pursuit_path: promises
       kind: lesson
       activity: repository
-    - name: API Calls with Fetch
+    - name: API Calls with Fetch & Promises
+      pursuit_path: api-calls-with-fetch
+      kind: lesson
+      activity: 
+    - name: App Polishing
       pursuit_path: api-calls-with-fetch
       kind: lesson
       activity: repository
-    - name: Weather App Project
+    - name: Weather App Project DEPRECIATE
       pursuit_path: weather-app
       kind: project
       activity: repository
-      points_possible: 9
+      points_possible: 100
     - name: Front-end Portfolio Project
       pursuit_path: front-end-portfolio
       kind: project
       activity: repository
-      points_possible: 29
-    - name: End of Unit
-      pursuit_path: final-fewd
-      kind: assessment
-      activity: repository
-      points_possible: 8
+      points_possible: 100
     - name: End of Unit Reflection
       elements:
         - kind: deck

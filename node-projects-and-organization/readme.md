@@ -11,11 +11,12 @@ When building applications, common issues need to be solved, for example, how to
 ## Learning Objectives
 
 - Create a `package.json` file using the `npm` command-line tool.
+- Describe the fundamental differences between a JavaScript object and JSON.
 - Describe the importance and purpose of the `package.json` file.
-
 - Import and export JavaScript data types from files using the `require()` function and `module.exports`.
 - Define scripts through the `package.json` file.
 - Access command line arguments through the `process` object.
+- Explain how `process.argv` creates an interface for a user to interact with.
 
 ## Node.js versus NPM
 
@@ -80,7 +81,7 @@ Looking at the documentation, you may see the option `-y`. This means selecting 
 
 You can verify that the `npm init` process has worked by checking the contents of your folder. You should see a `package.json` file.
 
-While the contents of the `package.json` file look like a JavaScript object, they are not the same. Some key differences between a JavaScript object and JSON include the following:
+While the contents of the `package.json` file look like a JavaScript object, they are not the same. Some key differences between a JavaScript object and JSON (**J**ava**S**cript **O**bject **N**otation) include the following:
 
 - Double quotes around all keys
 - Double quotes instead of single quotes whenever referencing a string value
@@ -129,8 +130,8 @@ You can edit the `package.json` file directly by opening the file in your code e
 
 Within an application, there has to be a starting point for the application to run. The `package.json` file defines this filename with the key `main`. According to the default `package.json` file, the entry point into the application is a file called `index.js`. You can create it by running the following command:
 
-```
- touch index.js
+```bash
+touch index.js
 ```
 
 Open this file and write a simple console log:
@@ -141,7 +142,7 @@ console.log("Hello, Node.js!");
 
 To run this program, type:
 
-```
+```bash
 node index.js
 ```
 
@@ -155,7 +156,7 @@ Node.js allows you to organize your code into separate files. Each file is a mod
 
 There are two syntaxes for importing and exporting files in Node.js. The default is currently the older syntax, which you have seen in the prior unit. You will learn about the newer syntax at a later time.
 
-As a new developer, it may be tempting only to want to learn the latest tools and coding styles. However, the reality is that on the job, most companies focus on building new features and maintaining old ones rather than rebuilding what works to the latest standards all the time. Therefore there is a good likelihood that a code base on the job will be a mix of old and new technology.
+As a new developer, it may be tempting only to want to learn the latest tools and coding styles. However, the reality is that on the job, most companies focus on building new features and maintaining old ones rather than prioritizing rebuilding what works to the latest standards all the time. Therefore there is a good likelihood that a code base on the job will be a mix of old and new technology.
 
 ### Exporting a variable
 
@@ -170,7 +171,7 @@ touch messages.js
 const message = "Oh, hai!";
 ```
 
-You will need to export this message to be able to use it in another file. You will use the `module.exports` statement. The keyword `default` will allow you to rename the variable when you import it elsewhere.
+You will need to export this message to be able to use it in another file. You will use the `module.exports` statement.
 
 ```js
 const message = "Oh, hai!";
@@ -207,9 +208,7 @@ const anotherMessage = "Oh, goodbye!";
 module.exports = { message, anotherMessage };
 ```
 
-To import these variables, go to `index.js`
-
-This console.log will now be the entire object:
+To import these variables, go to `index.js`. This log will now be the entire object:
 
 ```js
 // index.js
@@ -235,7 +234,7 @@ console.log(message);
 console.log(anotherMessage);
 ```
 
-You can also rename the objects. This can help shorten or create new variable names that clarify the code.
+You can also rename the objects. This can help shorten variable names or create new variable names that clarify the code.
 
 ```js
 const { message: hello, anotherMessage } = require("./messages.js");
@@ -284,17 +283,20 @@ Right now, there is no way for the user (person typing in terminal) to customize
 
 There are many times that user input is needed for command-line applications.
 
-Built into Node is a global object called `process`. It is a fairly large object filled with data and functions, and you can log it:
+Built into Node.js is a global object called `process`. It is a fairly large object filled with data and functions, and you can log it:
 
 ```js
 console.log(process);
 ```
 
-Poking around code like this can be interesting. But if you want to learn about it, you should read the docs—[Process docs](https://nodejs.org/api/process.html).
+Poking around code like this can be interesting. But if you want to learn about it, you should read the docs—[Node.js Process docs](https://nodejs.org/api/process.html).
 
 There is an overwhelming amount of information available here. Let's just start with one property: `argv`. [argv documentation section](https://nodejs.org/api/process.html#processargv).
 
-`process.argv` returns an array. The first two items are 0. the location of the Node.js program on your computer and 1. the file where this command was executed.
+`process.argv` returns an array. The first two items are
+
+0. The location of the Node.js program on your computer
+1. The file where this command was executed.
 
 ```js
 console.log(process.argv);
@@ -306,7 +308,7 @@ You can add more arguments. A space separates each argument. If you want multipl
 node index.js 'Good day to you' Mick greeting=hi
 ```
 
-You can use these with the `customGreeting()` function.
+You can use these with the `customGreeting()` function. Add the follwing to the `index.js` file:
 
 ```js
 console.log(customMessage(process.argv[2], process.argv[3]));
@@ -320,7 +322,7 @@ node index.js 'Good day to you' Mick greeting=hi
 
 Notice you have extra arguments before and after the ones you want. When you enter things in the command line, be aware of the order, and it will be ok. Many command line programs expect arguments in a specific order.
 
-For example, the `mv` application will move the first argument file to the second location (or rename it).
+For example, the `mv` application will move the first argument file to the second location (or rename it if the location does not exist).
 
 ```bash
 mv myFile.js ../myFile.js
@@ -366,9 +368,11 @@ const donuts = require("./donuts.json");
 console.log(donuts);
 ```
 
-## Reference Entire Files
+## Reference: Entire Files
 
-The `messages.js` file in its entirety:
+Below is the complete code from this reading.
+
+The `messages.js` file:
 
 ```js
 const message = "Oh, hai!";
@@ -382,7 +386,7 @@ module.exports = { message, anotherMessage, customMessage };
 module.exports = { message, anotherMessage, customMessage };
 ```
 
-The `index.js` file in its entirety:
+The `index.js` file:
 
 ```js
 const {

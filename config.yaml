@@ -16,8 +16,8 @@ sequence:
       pursuit_path: collaborative-programming
       kind: lesson
       activity: repository
-    - name: Node & NPM
-      pursuit_path: node-and-npm
+    - name: Node Projects and Organization
+      pursuit_path: node-projects-and-organization
       kind: lesson
       activity: repository
     - name: NPM Packages

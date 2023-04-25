@@ -2,6 +2,13 @@
 
 You can take user input as a prompt that can help an application feel more user-friendly.
 
+## Learning Objectives
+
+- Add and configure readline to a node project using Common JS Modlues (CJM)
+- Learn the syntax for asking a single question.
+- Use callbacks to write a series of questions.
+- Use recursion to use readline in a loop.
+
 #### Requiring the built-in module.
 
 Add `readline` to your app:
@@ -70,6 +77,68 @@ rl.question("What is your name? \n", (answer) => {
   console.log(`${importedFunction()}, ${answer}!`);
   rl.close();
 });
+```
+
+## Readline sequential questions
+
+To ask a series of questions, put a new `rl.question()` inside the callback of the previous one:
+
+```js
+function getUserInput() {
+  // First question
+  rl.question("First question? \n", (a1) => {
+    console.log(a1);
+    // Close connection
+    rl.close();
+  });
+}
+
+getUserInput();
+```
+
+Move th `rl.close()` inside the final callback
+
+```js
+function getUserInput() {
+  // First Question
+  rl.question("First question \n", (a1) => {
+    console.log(a1);
+
+    // Second question
+    rl.question("Second Question? \n", (a2) => {
+      console.log(a2);
+      // Close connection
+      rl.close();
+    });
+  });
+}
+```
+
+```js
+function getUserInput() {
+  // First Question
+  rl.question("First question \n", (a1) => {
+    // Second question
+    rl.question("Second question? \n", (a2) => {
+      // Third Question
+      rl.question("Third question \n", (a3) => {
+        // Do something with all the inputs
+        console.log(
+          "First answer: " +
+            a1 +
+            ", second answer: " +
+            a2 +
+            " third answer: " +
+            a3 +
+            "."
+        );
+
+        // Close connection
+        rl.close();
+      });
+    });
+  });
+}
 ```
 
 ## Readline in a loop

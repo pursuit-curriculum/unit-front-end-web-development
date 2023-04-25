@@ -4,7 +4,9 @@ In the upcoming lessons, you'll learn more about how Node.js and how its package
 
 You'll also move from building independent functions to building applications. Computer applications are programs designed to carry out specific tasks. For example, a web browser lets you browse the web. A calculator lets you make calculations, and your text editor lets you edit code.
 
-To build an application, you'll need to learn how to make a user interface so that your application's user can interact with it. At first, the interface will be very simple: it will just be through the command line. But as this unit progresses, you'll begin building web applications allowing users to interact with your application through a styled view in a web browser. Additionally, you'll learn how to organize your code by creating files and folders, to make small functions with a single purpose so that you can separate the concerns of your application, and how to put it all together so that you can run an application that feels seamless to the user.
+To build an application, you'll need to learn how to make a user interface so that your application's user can interact with it. At first, the interface will be very simple: it will just be through the command line. But as this unit progresses, you'll begin building web applications allowing users to interact with your application through a styled view in a web browser.
+
+Additionally, you'll learn how to organize your code by creating files and folders, to make small functions with a single purpose so that you can separate the concerns of your application, and how to put it all together so that you can run an application that feels seamless to the user.
 
 When building applications, common issues need to be solved, for example, how to take user input, read and write to files, or set up and use testing. Utilizing the tools, libraries, and frameworks will allow you to build more extensive and robust applications.
 
@@ -14,7 +16,6 @@ When building applications, common issues need to be solved, for example, how to
 - Describe the fundamental differences between a JavaScript object and JSON.
 - Describe the importance and purpose of the `package.json` file.
 - Import and export JavaScript data types from files using the `require()` function and `module.exports`.
-- Define scripts through the `package.json` file.
 - Access command line arguments through the `process` object.
 - Explain how `process.argv` creates an interface for a user to interact with.
 
@@ -77,7 +78,9 @@ Looking at the documentation, you may see the option `-y`. This means selecting 
 
 ## package.json
 
-`package.json` is a file where the metadata for the project is stored. npm will automatically generate some of the fields. You can also edit this file manually.
+`package.json` is a file where the `metadata` for the project is stored. npm will automatically generate some of the fields. You can also edit this file manually.
+
+> Metadata is data about data. One of the most common examples of metadata is the data attached to a digital photograph. The photograph itself contains data to store/display the image: this is the data most people are interested in. But the photograph will also contain more data that is not visible in the picture - like the time the photo was taken, what device took the photo, the location and camera settings, and more - all of this hidden data is metadata.
 
 You can verify that the `npm init` process has worked by checking the contents of your folder. You should see a `package.json` file.
 
@@ -154,7 +157,7 @@ Node.js allows you to organize your code into separate files. Each file is a mod
 
 ### Importing and Exporting Files
 
-There are two syntaxes for importing and exporting files in Node.js. The default is currently the older syntax, which you have seen in the prior unit. You will learn about the newer syntax at a later time.
+There are two syntaxes for importing and exporting files in Node.js. The default is currently the older syntax, which you have (likely) seen in the prior unit. You will learn about the newer syntax at a later time.
 
 As a new developer, it may be tempting only to want to learn the latest tools and coding styles. However, the reality is that on the job, most companies focus on building new features and maintaining old ones rather than prioritizing rebuilding what works to the latest standards all the time. Therefore there is a good likelihood that a code base on the job will be a mix of old and new technology.
 
@@ -333,6 +336,8 @@ or
 ```bash
 mv myFile.js myNewNamedFile.js
 ```
+
+The first file will always be the one to change.
 
 ### Exporting JSON
 

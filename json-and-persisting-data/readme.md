@@ -232,3 +232,108 @@ function readJSONFile(path, fileName) {
   return JSON.parse(readFileSync(`./${path}/${fileName}`, "utf8"));
 }
 ```
+
+## Reference files
+
+### package.json
+
+```json
+{
+  "name": "products-faker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "create": "node index.js create"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@faker-js/faker": "^7.6.0"
+  }
+}
+```
+
+### index.js
+
+```js
+const { randomProductFactory, createRandomProduct } = require("./products");
+const { writeJSONFile, readJSONFile } = require("./helpers");
+
+function run() {
+  let products = readJSONFile("./data", "products.json");
+  console.log(products);
+  if (process.argv[3]) {
+    products.push(...randomProductFactory(process.argv[3]));
+  } else {
+    products.push(createRandomProduct());
+  }
+  writeJSONFile("./data", "products.json", products);
+}
+
+run();
+```
+
+## products.js
+
+```js
+const { faker } = require("@faker-js/faker");
+
+function createRandomProduct() {
+  console.log("hi");
+  const product = {
+    _id: faker.datatype.uuid(),
+    name: `${faker.commerce.productAdjective()} ${faker.commerce.product()}`,
+    description: faker.commerce.productDescription(),
+    brand: faker.company.name(),
+    price: faker.commerce.price(10, 200, 2, "$"),
+    currency: "USD",
+    inStock: faker.datatype.boolean(),
+    attributes: {
+      material: faker.commerce.productMaterial(),
+      color: faker.vehicle.color(),
+    },
+  };
+  return product;
+}
+
+function randomProductFactory(number) {
+  const products = [];
+  for (let i = 0; i < number; i++) {
+    products.push(createRandomProduct());
+  }
+  return products;
+}
+
+module.exports = { createRandomProduct, randomProductFactory };
+```
+
+### helpers.js
+
+```js
+const fs = require("node:fs");
+const { appendFileSync, readFileSync, writeFileSync } = require("node:fs");
+
+function readJSONFile(path, fileName) {
+  const object = readFileSync(`./${path}/${fileName}`, "utf8");
+  return object ? JSON.parse(object) : [];
+}
+
+function writeJSONFile(path, fileName, data) {
+  data = JSON.stringify(data);
+  if (isValidJSON(data)) {
+    return writeFileSync(`${path}/${fileName}`, data, { encoding: "utf-8" });
+  } else {
+    console.error("The data was invalid. The file was not updated");
+  }
+}
+
+module.exports = {
+  appendJSONFile,
+  readJSONFile,
+  writeJSONFile,
+};
+```

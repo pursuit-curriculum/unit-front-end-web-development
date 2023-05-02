@@ -210,15 +210,10 @@ function run() {
 We get an error because the file is empty. We can write logic to create an empty array if the file is empty.
 
 ```js
-function run() {
-  let products = readJSONFile("./data", "products.json") || [];
-  console.log(products);
-  if (process.argv[3]) {
-    console.log(randomProductFactory(process.argv[3]));
-  } else {
-    products.push(createRandomProduct());
-    writeJSONFile("./data", "products.json", products);
-  }
+// helpers.js
+function readJSONFile(path, fileName) {
+  const object = readFileSync(`./${path}/${fileName}`, "utf8");
+  return object ? object : [];
 }
 ```
 
@@ -229,7 +224,8 @@ Return to the `helpers` file and update the `readJSONFile()` function to convert
 ```js
 // helpers.js
 function readJSONFile(path, fileName) {
-  return JSON.parse(readFileSync(`./${path}/${fileName}`, "utf8"));
+  const object = readFileSync(`./${path}/${fileName}`, "utf8");
+  return object ? JSON.parse(object) : [];
 }
 ```
 
@@ -264,14 +260,14 @@ const { randomProductFactory, createRandomProduct } = require("./products");
 const { writeJSONFile, readJSONFile } = require("./helpers");
 
 function run() {
-  let products = readJSONFile("./data", "products.json");
+  let products = readJSONFile("data", "products.json");
   console.log(products);
   if (process.argv[3]) {
     products.push(...randomProductFactory(process.argv[3]));
   } else {
     products.push(createRandomProduct());
   }
-  writeJSONFile("./data", "products.json", products);
+  writeJSONFile("data", "products.json", products);
 }
 
 run();
@@ -314,8 +310,7 @@ module.exports = { createRandomProduct, randomProductFactory };
 ### helpers.js
 
 ```js
-const fs = require("node:fs");
-const { appendFileSync, readFileSync, writeFileSync } = require("node:fs");
+const { readFileSync, writeFileSync } = require("node:fs");
 
 function readJSONFile(path, fileName) {
   const object = readFileSync(`./${path}/${fileName}`, "utf8");
@@ -324,15 +319,10 @@ function readJSONFile(path, fileName) {
 
 function writeJSONFile(path, fileName, data) {
   data = JSON.stringify(data);
-  if (isValidJSON(data)) {
-    return writeFileSync(`${path}/${fileName}`, data, { encoding: "utf-8" });
-  } else {
-    console.error("The data was invalid. The file was not updated");
-  }
+  return writeFileSync(`${path}/${fileName}`, data, { encoding: "utf-8" });
 }
 
 module.exports = {
-  appendJSONFile,
   readJSONFile,
   writeJSONFile,
 };

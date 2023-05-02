@@ -28,12 +28,12 @@ sequence:
       pursuit_path: tdd-w-jest
       kind: lesson
       activity: repository
-    - name: JSON and Node Built-in Modules
-      pursuit_path: json-and-node-modules
+    - name: JSON and Persisting Data
+      pursuit_path: json-and-persisting-data
       kind: lesson
       activity: repository
-    - name: Separation of Concerns for Applications
-      pursuit_path: separation-of-concerns
+    - name: Command-Line CRUD Application
+      pursuit_path: command-line-crud-application
       kind: lesson
       activity: repository
     - name: Error Handling

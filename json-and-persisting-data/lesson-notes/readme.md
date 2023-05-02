@@ -54,3 +54,4 @@ By the end of this lesson
 - How can you change an object into JSON?
 
 - Update your application so that every time new songs are made, they are added to a playlist collection (array of objects).
+- Update your application so that every time new songs are made, they are saved to a `playlist.json` file

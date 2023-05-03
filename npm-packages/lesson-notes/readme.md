@@ -26,8 +26,8 @@
 
 ## Create a new npm project
 
-- Create a new npm project called `spell-checker` with an entry point of `index.js
-- Write a program in the file `systemcheck.js` that returns the `hostname` and `userInfo` `username`. Then console log the results of the functions. Finally, export the functions
+- Create a new npm project called `spell-checker` with an entry point of `index.js`
+- Write a program in the file `systemcheck.js` that returns the `hostname` and `userInfo` `username`. Then console log the results of the functions. Finally, export the functions:
 
 ```js
 const os = require("os");
@@ -74,7 +74,7 @@ Set up the program so it runs with the command:
 
 ## Evaluate an npm package
 
-Look up the package `simple-spellchecker` - is it a popular package? Is it maintained? What else can you learn about it?
+Look up the package [simple-spellchecker](https://www.npmjs.com/package/simple-spellchecker) - is it a popular package? Is it maintained? What else can you learn about it?
 
 ## Add an npm package to your project and use it
 
@@ -110,6 +110,8 @@ module.exports = {
   checkWord,
 };
 ```
+
+Import this function into `index.js` so a user can input a word through the terminal.
 
 ```js
 // index.js
@@ -152,7 +154,7 @@ function checkWord(word) {
 
 ## Creating a new function to check many words
 
-Write a new function called `checkWords` That will use the spellchecker to check several words in the `spellcheck.js` file. Be sure to export it and import it into `index.js`.
+Write a new function called `checkWords` that will use the spellchecker to check several words in the `spellcheck.js` file. Be sure to export it and import it into `index.js`.
 
 ```js
 function checkWords(sentence) {
@@ -230,7 +232,7 @@ function checkWords(sentence) {
       console.log("There was an error", err);
       return;
     }
-    let allCorrect = true;
+
     // Split the sentence up into individual words
     const sentenceArr = sentence.split(" ");
     // Loop over each word
@@ -277,6 +279,13 @@ word = word.replace(/[^A-Z]/i, "");
 
 Add this line of code as the first line inside the for of loop.
 
+```js
+for (let word of sentenceArr) {
+  word = word.replace(/[^A-Z]/gi, "");
+  // ... Rest of code ...
+
+```
+
 ## Incorporate another npm package into your application
 
 Look up the package `chalk` - is it a popular package? Is it maintained? What else can you learn about it?
@@ -310,7 +319,7 @@ module.exports = {
 };
 ```
 
-Import and use the new warning and error functions to make the user interaction clearer and more informative:
+Import and use the new warning and error functions to make the user interaction clearer and more informative (2 places, noted by the comment `Add chalk`):
 
 ```js
 // spellcheck.js
@@ -328,6 +337,7 @@ function checkWords(sentence) {
     const sentenceArr = sentence.split(" ");
     // Loop over each word
     for (let word of sentenceArr) {
+      word = word.replace(/[^A-Z]/gi, "");
       // returns a boolean
       let isMisspelled = !dictionary.spellCheck(word);
       //If the word is misspelled

@@ -8,7 +8,7 @@ To build an application, you'll need to learn how to make a user interface so th
 
 Additionally, you'll learn how to organize your code by creating files and folders, to make small functions with a single purpose so that you can separate the concerns of your application, and how to put it all together so that you can run an application that feels seamless to the user.
 
-When building applications, common issues need to be solved, for example, how to take user input, read and write to files, or set up and use testing. Utilizing the tools, libraries, and frameworks will allow you to build more extensive and robust applications.
+When building applications, common issues need to be solved, for example, how to take user input, read and write data, or set up and use testing. Utilizing tools, libraries, and frameworks will allow you to build more extensive and robust applications.
 
 ## Learning Objectives
 
@@ -111,7 +111,7 @@ If you scroll back to the earlier screenshot and compare the output of running t
 
 ### Editing a `package.json` file
 
-You can edit the `package.json` file directly by opening the file in your code editor. You can change any of the keys or values at will. However, your JSON will need to be valid for it to run. For example, you could add your name as a value for the `"author" key:
+You can edit the `package.json` file directly by opening the file in your code editor. You can change any of the keys or values at will. However, your JSON will need to be valid for your application to run. For example, you could add your name as a value for the `"author" key:
 
 ```json
 {
@@ -387,7 +387,6 @@ const customMessage = (message, name) => {
   return `${message} ${name}`;
 };
 
-module.exports = { message, anotherMessage, customMessage };
 module.exports = { message, anotherMessage, customMessage };
 ```
 

@@ -116,7 +116,18 @@ Since you are adding new functionality, you have a design decision to make. You 
 
 Make a new file called `helpers` and a new directory, `data`.
 
-The following design decision is to have one file path and one file name to store your data. In one way, it's simpler. You won't have to pass arguments or worry about the location. However, if you call the function from the top level (where index.js is) or inside a new folder (e.g. if you made one called products), you'd have to update the function. The same goes for whether you hard-code a file name. For now, add the path and file name as separate arguments.
+The following design decision is whether to have the file path and file name hard-coded. In one way, it's simpler. You won't have to pass arguments or worry about the location. This can be a good choice if you are building a small demo or are just practicing coding.
+
+```js
+// helpers js
+const fs = require("node:fs");
+const { writeFileSync } = require("node:fs");
+function writeJSONFile(data) {
+  return writeFileSync(`./data/data.json`, data, { encoding: "utf-8" });
+}
+```
+
+This can become an issue if you change where you call the function from (where `index.js` is) to be inside a new folder (e.g. if you made a folder called `products`), you'd have to update the function. In larger applications, you may find yourself reusing these functions in multiple places. For now, add the path and file name as separate arguments.
 
 ```js
 // helpers js
@@ -132,7 +143,7 @@ module.exports = {
 };
 ```
 
-You'll note that an options object takes a key-value pair for encoding. This concerns the kind of text file you are writing to. It is tangential to what we are learning about. However, [Here is a 10-minute video](https://www.youtube.com/watch?v=MijmeoH9LT4) introduction, if you are interested.
+You'll note that an options object takes a key-value pair for encoding. This defines the kind of text file you are writing to. `UTF-8` is a modern standard and the details are is tangential to what we are learning about. However, [Here is a 10-minute video](https://www.youtube.com/watch?v=MijmeoH9LT4) introduction, if you are interested.
 
 Update the run function:
 
@@ -212,7 +223,7 @@ We get an error because the file is empty. We can write logic to create an empty
 ```js
 // helpers.js
 function readJSONFile(path, fileName) {
-  const object = readFileSync(`./${path}/${fileName}`, "utf8");
+  const object = readFileSync(`${path}/${fileName}`, "utf8");
   return object ? object : [];
 }
 ```
@@ -224,7 +235,7 @@ Return to the `helpers` file and update the `readJSONFile()` function to convert
 ```js
 // helpers.js
 function readJSONFile(path, fileName) {
-  const object = readFileSync(`./${path}/${fileName}`, "utf8");
+  const object = readFileSync(`${path}/${fileName}`, "utf8");
   return object ? JSON.parse(object) : [];
 }
 ```
@@ -260,14 +271,14 @@ const { randomProductFactory, createRandomProduct } = require("./products");
 const { writeJSONFile, readJSONFile } = require("./helpers");
 
 function run() {
-  let products = readJSONFile("data", "products.json");
+  let products = readJSONFile("./data", "products.json");
   console.log(products);
   if (process.argv[3]) {
     products.push(...randomProductFactory(process.argv[3]));
   } else {
     products.push(createRandomProduct());
   }
-  writeJSONFile("data", "products.json", products);
+  writeJSONFile("./data", "products.json", products);
 }
 
 run();
@@ -313,7 +324,7 @@ module.exports = { createRandomProduct, randomProductFactory };
 const { readFileSync, writeFileSync } = require("node:fs");
 
 function readJSONFile(path, fileName) {
-  const object = readFileSync(`./${path}/${fileName}`, "utf8");
+  const object = readFileSync(`${path}/${fileName}`, "utf8");
   return object ? JSON.parse(object) : [];
 }
 

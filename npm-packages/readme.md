@@ -237,18 +237,16 @@ lolcats.print(veryNestedObject.one.two.three.four.five);
 
 ## Versioning
 
-By default, when you run `npm install some-package` it will install the latest version. However, the latest version may not be compatible with your system or other packages. When you tried to run your code, you probably ran into the following error:
+By default, when you run `npm install some-package` it will install the latest version. However, the latest version may not be compatible with your system or other packages. When you tried to run your code, you probably ran into an error.
 
 In this course (or any tutorial or book), it is best to use the instructional material's version. Tech and code change frequently, and there can be breaking changes or other updates that won't work as expected until the entire lesson/book has been updated, making learning a more frustrating experience. Once you've completed the lesson, you can try the latest version.
 
 Let's uninstall the latest version and install the version the course materials uses:
 
-````
+```
 npm uninstall lolcats
 npm install lolcats@2
 ```
-
-
 
 ## Checking the `.gitignore` file
 
@@ -291,7 +289,7 @@ If you run `git log --oneline`, you should see three commits now (press `q` to q
 
 ## Writing your own scripts
 
-You know that you must run `node index.js` to start your app. But if you were developing this project for other people to use, you'd want to make it easy for them to use the project and work with a typical pattern for starting node applications.
+You know that you must run `node index.js` to start your app. But what if you named your main file `main.js` or `app.js`? All these file names are reasonable. If you were developing this project for other people to use, you'd want to make it easy for them to use the project and work with. So you can implement a typical pattern for starting node applications.
 
 You can create your own npm scripts through the `package.json` file.
 
@@ -301,7 +299,7 @@ If you look into the `package.json` file, there is only one default script.
  "scripts": {
  "test": "echo \"Error: no test specified\" && exit 1"
  },
-````
+```
 
 You can run this script by typing `npm test`.
 
@@ -339,7 +337,7 @@ And run them:
 npm run lol 'Oh hai!'
 ```
 
-For now, there is not a lot of utility in creating these commands since you are only running one file. However, understanding the concepts and syntax now will help you as things become more complex.
+For now, there is not a lot of utility in creating these commands since you are only running one function. However, understanding the concepts and syntax now will help you as things become more complex.
 
 ## Evaluating npm packages
 
@@ -363,7 +361,7 @@ This one is somewhat more popular but also has not been updated in two years.
 
 **Thought question**: Can you use both `lolcats` and `lolcatsjs` packages in one project?
 
-Can you figure out how to use this package? Hint: look at the documentation and see if you can at least run the simple demo.
+Can you figure out how to use this package? Hint: look at the documentation and see if you can at least run the simple demo the documentation provides.
 
 Let's look at one more called `chalk`:
 ![npm registry chalk package info](./assets/chalk-npm-info.png)

@@ -15,9 +15,9 @@ By the end of this lesson
 
 ## Getting started
 
-With coding, there is always a temptation to jump into coding and solve whatever comes along. However, it's essential to take a few steps back. When you code without a plan, you can create features that no one asked for, make your code too complex, wholly misunderstand what you are building, or try to build something impossible within the time and technology time constraints.
+With coding, there is always a temptation to jump into coding and solve whatever comes along. However, it's essential to take a few steps back. When you code without a plan, you can create features that no one asked for, make your code too complex, wholly misunderstand what you are building, or try to build something impossible within the time and technology constraints.
 
-Building an app that lets users look for animals in NYC can conjure a lot of cool features. The list uses a particular pattern that usually starts with `A user can` - writing out features this way can be helpful because a non-technical person can understand what the feature should do. A technical person can understand what functionality they need to build.
+Building an app that lets users look for animals in NYC can conjure a lot of cool features. The list uses a particular pattern that usually starts with `A user can` - writing out features this way can be helpful because a non-technical person can understand what the feature should do and a technical person can understand what functionality they need to build.
 
 - A user can add a map location where the animal was seen.
 - A user can see a list of animals.
@@ -47,7 +47,7 @@ You can either read or code along.
 - `touch index.js helpers.js`
 - `npm init -y`
 
-Based on the user stories above, create scripts that would run the following:
+Based on the user stories above, create scripts that would run the following (`Rsl_` represents a unique id for an example animal):
 
 ```
 npm run index
@@ -76,7 +76,11 @@ In the `index.js` file, create a `run` function that will handle the scripts.
 Additionally, `console.log` will serve two purposes, to `inform` your user about something or for you (the developer) to debug. To help clarify which console log does what, you can give `console.log` an alias:
 
 ```js
+// give console.log an alias
+// When providing user feedback use `inform`
+// When developing/debugging use `console.log`
 const inform = console.log;
+
 function run() {
   const action = process.argv[2];
   const animal = process.argv[3];
@@ -106,7 +110,17 @@ function run() {
 run();
 ```
 
-Test each script.
+Test each script to be sure things work as expected:
+
+```
+npm run index
+npm run create bat
+npm run show Rsl_
+npm run update Rsl_ "red fox"
+npm run destroy Rsl_
+npm run score
+npm run oops
+```
 
 ### Index
 
@@ -119,7 +133,7 @@ In the `helpers.js` file, create the same functionality from the previous lesson
 const { readFileSync, writeFileSync } = require("node:fs");
 
 function readJSONFile(path, fileName) {
-  const object = readFileSync(`./${path}/${fileName}`, "utf8");
+  const object = readFileSync(`${path}/${fileName}`, "utf8");
   return object ? JSON.parse(object) : [];
 }
 
@@ -139,7 +153,7 @@ Import these functions to `index.js`.
 In the `index.js` file's run function, get the data from the `animals.json` file and update the index case to log the file contents:
 
 ```js
-let animals = readJSONFile("data", "animals.json");
+let animals = readJSONFile("./data", "animals.json");
 
 //Further down
 
@@ -163,7 +177,7 @@ function create(animals, animalName) {
 }
 ```
 
-To add an id, you need to add an npm package to generate a unique id.
+To add an id, you need to add an npm package to generate a unique id. Limit the `id` to be 4 characters long, so that there is less for the user to type.
 
 ```
 npm install nanoid@3
@@ -235,8 +249,10 @@ Start by adding two variables to the top of the `run` function.
 
 ```js
 // index.js
+function run {
 let writeToFile = false;
 let updatedAnimals = [];
+// Rest of code
 ```
 
 Update the `create` case.
@@ -252,13 +268,13 @@ Write some logic on whether or not to write to the file after the switch stateme
 
 ```js
 if (writeToFile) {
-  writeJSONFile("data", "animals.json", updatedAnimals);
+  writeJSONFile("./data", "animals.json", updatedAnimals);
 }
 ```
 
 ### Minimum Viable Product
 
-You may wonder, what if the user enters `Bat` instead of `bat`? Or have they seen an animal not on the list? What if the user misspells `peregrine` or only knows they saw a `falcon`? Wouldn't it be nice to solve these things?
+You may wonder, what if the user enters `Bat` instead of `bat`? Or what if the user has seen an animal not on the list? What if the user misspells `peregrine` or only knows they saw a `falcon`? Wouldn't it be nice to solve these things?
 
 Yes.
 

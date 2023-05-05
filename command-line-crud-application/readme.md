@@ -44,7 +44,9 @@ You can either read or code along.
 - `mkdir fauna-go`
 - `cd fauna-go`
 - `touch .gitignore` (and add appropriate files and folders)
-- `touch index.js helpers.js`
+- `touch index.js
+- `mkdir src`
+- `touch src/helpers.js`
 - `npm init -y`
 
 Based on the user stories above, create scripts that would run the following (`Rsl_` represents a unique id for an example animal):
@@ -125,7 +127,7 @@ npm run oops
 ### Index
 
 - `mkdir data`
-- `touch animals.json`
+- `touch data/animals.json`
 
 In the `helpers.js` file, create the same functionality from the previous lesson:
 
@@ -167,7 +169,7 @@ For now, `animals` should be an empty array.
 
 The user will run the command `npm run create bat` to create a new animal. A new animal should be a new entry into the user's data. Each animal should have a unique id, a name, and the points associated with it. Then the animal should be added to the end of the animals array.
 
-This functionality controls what happens to the data. Therefore it is a separate concern from the other functionality you've built. Make a new file called `animalController.js`
+This functionality controls what happens to the data. Therefore it is a separate concern from the other functionality you've built. Make a new file called `animalController.js` in the `src` folder
 
 ```js
 function create(animals, animalName) {
@@ -417,8 +419,14 @@ You have now built a complete CRUD app. No matter how many features you build, a
 ### index.js
 
 ```js
-const { writeJSONFile, readJSONFile } = require("./helpers");
-const { create, destroy, edit, index, show } = require("./animalController.js");
+const { writeJSONFile, readJSONFile } = require("./src/helpers");
+const {
+  create,
+  destroy,
+  edit,
+  index,
+  show,
+} = require("./src/animalController.js");
 
 const inform = console.log;
 

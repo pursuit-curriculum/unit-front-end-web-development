@@ -112,8 +112,6 @@ Once you've created your test files, you can edit your file to contain one or mo
 
 For example, suppose you have a function called `sum()` that adds two numbers together. You could write a test case for this function like this:
 
-Sure! Here's a more detailed explanation of the code I provided in the last answer:
-
 ```javascript
 test("adds 1 + 2 to equal 3", () => {
   expect(sum(1, 2)).toBe(3);
@@ -132,7 +130,7 @@ expect(sum(1, 2)).toBe(3);
 
 This line uses the `expect()` function provided by `jest` to define the expected behavior of the `sum()` function. The `expect()` function takes one argument, which is the value that you want to test. In this case, the argument is `sum(1, 2)`, which is the result of calling the `sum()` function with arguments `1` and `2`.
 
-The `toBe()` function is then called on the result of `expect(sum(1, 2))`. `toBe()` is a matcher function provided by `jest` that checks if the value it's called on is equal to the argument passed to it. In this case, the argument passed to `toBe()` is `3`, which is the expected result of adding `1` and `2`.
+The `toBe()` function is then called on the result of `expect(sum(1, 2))`. `toBe()` is a matcher function provided by `jest` that checks whether the value it's called on is equal to the argument passed to it. In this case, the argument passed to `toBe()` is `3`, which is the expected result of adding `1` and `2`.
 
 So, putting it all together, the test case is checking if the `sum()` function correctly adds `1` and `2` together to give a result of `3`. If the test passes, it means that the `sum()` function is working correctly. If the test fails, it means that there's something wrong with the `sum()` function, and you need to investigate further to figure out what the problem is.
 
@@ -287,6 +285,16 @@ describe("getFullName()", () => {
 ```
 
 This format is much easier to read and can be reproduced in many different testing situations.
+
+### Failing tests
+
+When your tests fail, you will receive an output that looks very similar to what you may see in your console when an error occurs.
+
+![Image of a failing test.](./assets/failed-test.png)
+
+For example, in the image above you can see that the test for the `getFullName()` function has failed. It shows you what the expected value was and what the actual value was. It also highlights the exact point in the test where there is a failure.
+
+Remember that a test failure is really _a good thing._ While it's never fun to see a problem with your code, it likely means your tests are working or that you need to update your tests. Tests are a way to ensure correctness across your application as it changes and grows.
 
 ### Using appropriate matchers
 

@@ -24,8 +24,8 @@ sequence:
       pursuit_path: npm-packages
       kind: lesson
       activity: repository
-    - name: Test-Driven Development with Jest
-      pursuit_path: tdd-w-jest
+    - name: Test with Jest
+      pursuit_path: test-with-jest
       kind: lesson
       activity: repository
     - name: JSON and Persisting Data

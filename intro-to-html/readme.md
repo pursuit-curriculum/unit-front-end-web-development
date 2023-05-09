@@ -21,6 +21,8 @@ By the end of this lesson, you should be able to:
 - Use common HTML tags to build a simple web page.
 - Use common self-closing tags to build a simple web page.
 
+---
+
 ## A brief history of HTML
 
 HTML (**H**yper**t**ext **M**arkup **L**anguage) was first proposed in the early 1980s and was adopted in the 1990s for web browsers through HTTP (**H**yper**t**ext **T**ransfer **P**rotocol) . The initial intent of HTML was to be able to share scientific papers across academic institutions electronically. It has, since then, grown to serve nearly countless types of applications for the web.

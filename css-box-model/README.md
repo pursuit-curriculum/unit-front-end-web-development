@@ -35,11 +35,18 @@ The below element has:
 
 As you can see, the content is in the center, surrounded by padding, then the border, then the margin. The position, although shown in the image above, does not wrap around an HTML element in the same way the others do but instead determines its place in the "flow" of the page. The `position` property is discussed in more detail below.
 
-The order of these components always stays the same.
+The order of these properties always stays the same (content in the middle, margin is the outermost).
+
+### Developer Tools
+
+You can inspect any HTML element on a page by opening developer tools. If you are using Chrome, you can use the keyboard shortcut <kbd>command</kbd>
+<kbd>option</kbd> <kbd>i</kbd>.
+
+This will allow you to choose any element on the page and see its properties and box model.
 
 ### Content
 
-Content generally refers to text and other HTML elements. Typically, content will adjust to the maximum width allowed by its container (parent HTML element) or viewport. Once it has reached maximum width, content will expand in terms of height.
+Content generally refers to text and other HTML elements within the element you are inspecting. Typically, content will adjust to the maximum width allowed by its container (parent HTML element) or viewport (width/height of the browser). Once it has reached maximum width, content will expand in terms of height.
 
 For example, take a look at the following empty `div`. A `div` has a default `display` of `block`, which means it can be the only element going across and it takes up the entire width of the parent element. It has a height of `0`, because it currently has no content.
 
@@ -338,7 +345,8 @@ li {
 
 ### BONUS: Flex
 
-Flex is a newer display, introduced in 2009. [Flex](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) sets the `flexbox` property on the container which will impact all the children components. Flexbox is great for:
+Flex is a newer display, introduced in 2009. [Flex](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) sets the `flexbox` property on the container which will impact all the children components.
+Flexbox is great for:
 
 - Centering elements (an alternative to `margin: auto`)
 - [Setting elements equidistantly from each other](https://css-tricks.com/equidistant-objects-with-css/)
@@ -358,13 +366,11 @@ ul {
 }
 ```
 
-In this course, you will not cover flexbox but are encouraged to explore it on your own.
+In this course, you will not cover flexbox but are encouraged to explore it on your own. A top resources is [CSS Tricks: A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 
 ### Grid
 
-[Grid](https://css-tricks.com/snippets/css/complete-guide-grid/) is the newest display type. It allows elements to be laid out in a responsive grid and thus allows creating complex, responsive layouts to be achieved with relative ease, especially in contrast to older techniques.
-
-You will cover CSS Grid at a later time.
+[CSS Tricks: A Complete Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/) is the newest display type. It does not replace Flexbox, in fact Grid and Flexbox can be used together to solve a lot of challenging layouts, especially in terms of creating great responsive design (looking good on multiple browser sizes, looking good on various devices and orientations). It allows elements to be laid out in a responsive grid and thus allows creating complex, responsive layouts to be achieved with relative ease, especially in contrast to older techniques.
 
 ## Position
 

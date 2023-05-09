@@ -12,6 +12,8 @@ By the end of this lesson, you should be able to:
 - Add styles to an HTML page using the `style` element.
 - Add styles to an HTML page’s elements by connecting an external style sheet.
 
+---
+
 ## Getting started
 
 You can either read along or code along.
@@ -19,25 +21,28 @@ You can either read along or code along.
 You can create a new `index.html` file and add the following.
 
 ```html
- </head>
- <body>
- <header>
- <h1>Bicycles!</h1>
- <h2>The best bike shop in town<span>!</span></h2>
- </header>
- <main>
- <section><h3>Road Bikes</h3></section>
- <section><h3>Dirt Bikes</h3></section>
- <section><h3>Electric Bikes</h3></section>
- </main>
- <aside>
- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam debitis</p>
- <p>harum dolore sunt, quis velit accusantium pariatur! Illo, sed nam
- similique pariatur voluptate doloremque iusto vero quod itaque </p>
- <p>eligendi</p>
- <p>deleniti?</p>
- </aside>
- </body>
+<body>
+  <header>
+    <h1>Bicycles!</h1>
+    <h2>The best bike shop in town<span>!</span></h2>
+  </header>
+  <main>
+    <section><h3>Road Bikes</h3></section>
+    <section><h3>Dirt Bikes</h3></section>
+    <section><h3>Electric Bikes</h3></section>
+  </main>
+  <aside>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam debitis
+    </p>
+    <p>
+      harum dolore sunt, quis velit accusantium pariatur! Illo, sed nam
+      similique pariatur voluptate doloremque iusto vero quod itaque
+    </p>
+    <p>eligendi</p>
+    <p>deleniti?</p>
+  </aside>
+</body>
 ```
 
 ## What is a Cascading Style Sheet?

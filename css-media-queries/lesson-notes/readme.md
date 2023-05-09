@@ -2,7 +2,7 @@
 
 ## Learning Objectives
 
-By the end of this lesson you should be able to:
+By the end of this lesson, you should be able to:
 
 - Describe what is meant by responsive design.
 - Modify the layout of a page with media queries so that it displays differently depending on the screen size.
@@ -11,9 +11,9 @@ By the end of this lesson you should be able to:
 
 - What does it mean for a website to be responsive?
 
-- Try changing the size of this page. As it grows smaller, does anything on the webpage change besides the text wrapping? Would you consider this website responsive?
+- Try changing the size of this page. Does anything on the webpage change besides the text wrapping as it grows smaller? Would you consider this website responsive?
 
-- What does "mobile-first" mean in regards to responsive design?
+- What does "mobile-first" mean regarding responsive design?
 
 - What `meta` element attribute is required for your page to be responsive?
 
@@ -27,26 +27,26 @@ By the end of this lesson you should be able to:
 
 - Take a look at the following CSS. Then, answer the questions below.
 
-  ```css
+```css
+p {
+  color: green;
+}
+
+@media (min-width: 800px) {
   p {
-    color: green;
+    color: blue;
   }
+}
 
-  @media (min-width: 800px) {
-    p {
-      color: blue;
-    }
+@media (max-width: 700px) {
+  p {
+    color: red;
   }
+}
+```
 
-  @media (max-width: 700px) {
-    p {
-      color: red;
-    }
-  }
-  ```
+- What color will the `p` text be if the width of the page is 850px?
 
-  - What color will the `p` text be if the width of the page is 850px?
+- What color will the `p` text be if the width of the page is 750px?
 
-  - What color will the `p` text be if the width of the page is 750px?
-
-  - What color will the `p` text be if the width of the page is 650px?
+- What color will the `p` text be if the width of the page is 650px?

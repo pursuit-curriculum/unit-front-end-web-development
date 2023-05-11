@@ -1,348 +1,354 @@
-# HTML Introduction
+# Introduction to HTML and Web Applications
 
-## Goals
+So far, you've built applications to be used in the console. Now, it's time to learn to make an application for the web.
 
-- Understand what HTML is and what it is used for
-- Create an HTML document
-- Use paragraph, heading, strong and emphasis tags appropriately in an HTML document
-- Understand how list tags work in HTML
-- Use ordered and unordered list tags appropriately in an HTML document
-- Use link tags appropriately in an HTML document
-- Use image tags in an HTML document
-- Create an appropriate form using the HTML form tag
+Web pages are made up of three components:
 
-## Keywords
+- HTML (**H**yper**t**ext **M**arkup **L**anguage), which sets the content of a webpage.
+- CSS (**C**ascading **S**tyle **S**heets), which sets a webpage's style (appearance).
+- JavaScript, which sets the functionality of a webpage.
 
-- Hypertext Markup Language (HTML)
-- Tags
-  - Paragraph (`<p>`)
-  - Headings (`<h1>`, `<h2>`, etc)
-  - Strong (aka **bold**, `<strong>`)
-  - Emphasis (aka _italics_, `<em>`)
-  - Ordered List (`<ol>`)
-  - Unordered List (`<ul>`)
-  - List Items (`<li>`)
-  - Link (`<a>`)
-  - Image (`<img>`)
-  - Form (`<form>`)
-  - Form Input (`<input>`)
-  - Line break ()`<br>`)
+First, you'll learn HTML and how to create the content of a web page. Then you'll learn how to style the content. Finally, you'll learn how to use JavaScript to add functionality to a web page.
 
-## Resources
+## Learning objectives
 
-- [What is HTML? (video)](https://www.youtube.com/watch?v=CKlh1lwe2rY)
-- [HTML Intro - W3Schools](https://www.w3schools.com/html/html_intro.asp)
-- [HTML - MDN](https://developer.mozilla.org/en-US/docs/Web/HTML)
-- [HTML Paragraphs - HTML Dog](http://htmldog.com/guides/html/beginner/paragraphs/)
-- [HTML Headings - HTML Dog](http://htmldog.com/guides/html/beginner/headings/)
-- [HTML Lists - HTML Dog](http://htmldog.com/guides/html/beginner/lists/)
-- [HTML Lists - W3Schools](https://www.w3schools.com/html/html_lists.asp)
-- [HTML Links - HTML Dog](http://htmldog.com/guides/html/beginner/links/)
-- [HTML Links - W3Schools](https://www.w3schools.com/html/html_links.asp)
-- [HTML Images - HTML Dog](http://htmldog.com/guides/html/beginner/images/)
-- [HTML Images - W3Schools](https://www.w3schools.com/html/html_images.asp)
-- [HTML Forms - HTML Dog](http://htmldog.com/guides/html/beginner/forms/)
-- [HTML Forms - W3Schools](https://www.w3schools.com/html/html_forms.asp)
+By the end of this lesson, you should be able to:
 
-# 1. HTML Introduction
+- Describe the role HTML plays in building web pages.
+- Describe a brief history of HTML
+- Describe the components of HTML boilerplate code.
+- Differentiate between elements, tags, and attributes.
+- Use common HTML tags to build a simple web page.
+- Use common self-closing tags to build a simple web page.
 
-When a web browser displays a web page to a user, the browser needs to know three things:
+---
 
-1. What _content_ (text, images, video, etc.) is on the web page? What is the _structure_ of this content?
-1. How should the content _appear_?
-1. How should the page _behave_ in response to a user?
+## A brief history of HTML
 
-HTML stands for "Hyper Text Markup Language". It's a special way of writing that tells web browsers what text, images, and other content you want people to see on your website. HTML is responsible for (1), but HTML can also tell a browser a little bit about how the content should appear (2). It **cannot** tell a browser how a website should behave (3). That's what JavaScript is for!
+HTML (**H**yper**t**ext **M**arkup **L**anguage) was first proposed in the early 1980s and was adopted in the 1990s for web browsers through HTTP (**H**yper**t**ext **T**ransfer **P**rotocol) . The initial intent of HTML was to be able to share scientific papers across academic institutions electronically. It has, since then, grown to serve nearly countless types of applications for the web.
 
-HTML uses _tags_ inside angle brackets to tell the browser what type of information is inside (e.g `<h1>Heading</h1>` is a heading).
-
-HTML is not a programming language. You can't write code in HTML, only give instructions about what information to display. You can, however, combine HTML and JavaScript to build websites that both show text, and allow for user interaction.
-
-In this unit, we'll learn how to build static (unchanging) websites with HTML and how to integrate JavaScript to make our websites interactive.
-
-# 2. Edit HTML in the wild
-
-HTML is all around us. Let's explore an example from a real website online.
-
-While many websites use more complicated tools, [Craigslist](https://newyork.craigslist.org/) is a major website that primarily uses HTML to format and display text.
-
-To look at the HTML that's powering this website, right click on "new york city" and click "inspect".
-
-![Inspector open on Craigslist.](./assets/craigslist-inspect.png)
-
-On the right side, you can see the HTML. Now that you can see the inner workings, you can edit it. Delete the text that says "new york city" and replace it with some other text. Then click enter.
-
-![Inspector open on Craigslist, with text having been edited.](./assets/craigslist-edit.png)
-
-Neat! Now try a few more on your own.
-
-- Change the text that says "about"
-- Change the text that says "community"
-- Change the text that says "S" in the calendar
-- Change the text that reads "search craigslist"
-- Change the text that says "create a posting" (BONUS, make that link go somewhere else)
-
-# 3. HTML Introduction
-
-Now that we see what HTML is used for, let's go over how to write our own websites.
-
-- Create a folder in your sandbox called `html_intro`
-- Create a file inside that folder called `helloWorld.html`
-- Open the directory in vscode with `code .`
-
-The basic setup of HTML looks like this:
-
-```HTML
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>My Title</title>
-  </head>
-  <body>
-    <!-- Your website text goes here -->
-  </body>
-</html>
-```
-
-- `<!DOCTYPE html>` is a special declaration that we put at the top to say which version of HTML we're using. By default, not we are using HTML 5. If we wanted to write using an older version, we'd change this declaration here.
-- The rest of our website is enclosed in these `<html> </html>` tags. <html> means that everything below is html, up until we hit the `</html>` tag.
-- `<head>` means that everything up until the `</head>` tag is part of the website's metadata. Metadata means information about the website, but not something that we show to users. This includes stuff like the language the page is in, and the image/text that shows up when you post a link in slack.
-- `<body>` means that everything up until the `</body>` tag is part of the main content. Users will see all of the text and tags here.
-- We write comments in HTML using the `<!-- -->` syntax. Users won't be able to see anything in between the `<!--` and `-->`
-
-Let's add some text to our website and take a look!
-
-```HTML
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>My Title</title>
-  </head>
-  <body>
-    Hello World!
-  </body>
-</html>
-```
-
-You can now open this file with your web browser:
-
-```
-$ open helloWorld.html
-```
-
-# 4. HTML: Paragraphs
-
-We just made our first website! Not a lot of content there yet though, so let's add some.
-
-```HTML
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>My Title</title>
-  </head>
-  <body>
-    Hello World!
-
-    This is my website.
-    I hope that you enjoy it!
-
-    Email me if you want me to build you a website.
-  </body>
-</html>
-```
-
-![A single line of HTML on the page.](./assets/html-one-ling.png)
-
-When we view our website in a browser, all the text is there, but it's only on one line. HTML doesn't respect new lines that you add manually in the `<body>`. In fact, HTML ignores all "whitespace", similar to how javascript doesn't care whether you write stuff on one line or multiple.
-
-In order to tell the browser how to display your website, you'll need to use more HTML tags.
-
-The `<p>` tag stands for paragraph and is used for telling the browser that everything between the `<p>` and `</p>` tags should be its own block.
-
-```HTML
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>My Title</title>
-  </head>
-  <body>
-    <p>Hello World!</p>
-    <p>This is my website.</p>
-    <p>I hope that you enjoy it!</p>
-    <p>Email me if you want me to build you a website.</p>
-  </body>
-</html>
-```
-
-![Multiple paragraphs on a page.](./assets/html-paragraphs.png)
-
-# 5. HTML: Headings
-
-Our website above has the text separated out, but doesn't have a way to differentiate sections. Using the `<h1>` tag, we can create a _heading_ that has larger text.
-
-```HTML
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>My Title</title>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-    <p>This is my website.</p>
-    <p>I hope that you enjoy it!</p>
-    <h2>Website Building</h2>
-    <p>Email me if you want me to build you a website.</p>
-  </body>
-</html>
-```
-
-> Take 2 minutes and add an `<h3>` and a few sentences about whatever you like! Write about donuts, video games, or how much you miss sports.
-
-![HTML headers on a page with paragraphs.](./assets/html-header.png)
-
-In HTML there are six different types of headings, h1 to h6, with h1 having the largest default font size/line spacing and h6 having the smallest default font size/line spacing. Typically heading tags are used for titles and subtitles on a page, with large bold fonts.
-
-# 6. Styling Tags
-
-Other tags that can be useful for style and emphasis are the `<strong>` and `<em>` (for emphasis) tags. `<strong>` tags, by default, make a text **bold**; `<em>` tags, by default, make text _italic_. If we wanted text to be bold or italic, we would just wrap that text in a `strong` or `em` tag _inside_ our `p` or `h` tags. Let's add some to our HTML and see what happens:
+Rather than sending a plain word document, HTML adds `tags` to documents that help define the text's role. For example, a paragraph would be wrapped with paragraph tags (`p` tags), and a `header` tag would define a header (like a title or name of a text subsection). An HTML `element` is the entire tag and its contents. For example, the following is an example of a paragraph element. Notice it has an opening tag and a closing tag:
 
 ```html
-<h1>This is my first web page.</h1>
-<p>How <em>exciting</em>!</p>
-<p><strong>Isn't it?</strong></p>
+<p>Hello, world!</p>
 ```
 
-> You do: Take 2 minutes and add emphasis and bolding to several words of your choice. Experiment putting the tags inside and outside the existing `<p>` tags.
+This additional syntax helped define different parts of scientific articles to make them clearer to read and understand.
 
-# 7. HTML tags: Lists
+HTML was designed to be simple and easy for anyone to learn. The idea was that it should be accessible for anyone to create a webpage. This approach allowed the internet to be easily adapted by many people and grow relatively quickly.
 
-## List Tags
+## HTML documents
 
-It is not uncommon to see bulleted lists of information or numbered lists on the web, but how do we create those? Using what we've seen, we could try the following:
+Each web page is an HTML document, and some key components are part of every web page. Your text editor can quickly generate these necessary components.
 
-```html
-<h1>This is my first web page.</h1>
-<p>How <em>exciting</em>!</p>
-<p><strong>Isn't it?</strong></p>
+Feel free just to read or code along. Create a new file in the terminal. Ensure it has the extension `.html` and open it in your text editor.
 
-<h2>Let's make a list!</h2>
-<p>1. First item!</p>
-<p>2. Second item!</p>
-<p>3. Third item!</p>
+```
+touch index.html
 ```
 
-It looks pretty much like a list but now imagine we want add ten more items but then want to delete this first item. Now we have to manually change _every_ number because the second bullet would now become the first. List tags resolve this issue.
+Once you begin typing `html`, a helper menu should pop up. In VSCode, it will look like this.
 
-### Ordered List Tags
+![VSCode HTML Menu](./assets/vscode-html-menu.png)
 
-To solve the problem we've created above we are going to implement an _ordered list_ which is a numbered list. Ordered lists are great because we don't need to keep track of what number each bullet is--they are automatically incremented. To create an ordered list we first use the `<ol>` tag and then put our list items `<li>` inside that.
+Choose `html:5`. `html:5` is the latest version of HTML. This will add some `boilerplate` code to your file. Boilerplate code is often repeated and refers to the essential components required to start a new file or project.
 
-Let's change our list to be an actual ordered list:
+Let's break down the different components of the boilerplate.
+
+> **Note**: This boilerplate is subject to minor changes and can vary a little bit depending on your code editor and code editor preferences:
 
 ```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+```
+
+### DOCTYPE
+
+HTML is rendered in browsers. Browsers need some information about the file they are trying to render. One critical piece is the file extension `.html`, and the other is the doctype, which specifies the version of HTML. Currently, the latest version is 5. Adding this line will ensure your HTML is rendered with the latest features and specifications.
+
+```html
+<!DOCTYPE html>
+```
+
+### HTML
+
+The following tag is `html`. Notice it has an opening `<html>` and closing `</html`> tag with several tags inside. Most HTML elements require opening and closing tags.
+
+The opening tag also has some more information. It has an `attribute`. Attributes are key-value pairs separated by an `=` sign.
+
+In this case, the `html` is being set to the language (`lang`) English (`en`). Websites are used worldwide, and specifying the default language is vital to help translate web pages and set other default properties.
+
+```html
+<html lang="en"></html>
+```
+
+**Note:** HTML does not throw errors if the tags are incomplete or incorrect. Instead, it will do its best to render what you have written. This can be both a good and bad thing.
+
+### Head and body tags
+
+Inside the `html` tags are two sibling components: `head` and `body`.
+
+The `head` tag is where the metadata is stored. This contains information about the web pages and includes the title and favicon, the text, and the image appearing in the web page's tab. It can also have a lot more information that helps add style and functionality and can add critical information for SEO (**S**earch **E**ngine **O**ptimization), which is crucial information for a search engine like Google to determine how to index your web page in its search results.
+
+The `body` tag is everything the user sees and interacts with inside the browser.
+
+```html
+<head></head>
+<body></body>
+```
+
+### Common head tags
+
+In the given example are two tags in the head tag.
+
+One is a `meta` tag that sets the type of characters on the page for the website to render. Throughout the years, there have been many character standards. You may have heard of ASCII - which is an older standard. UTF-8 is the latest standard.
+
+The other tag is a `title` tag. This is your webpage's title, and it shows up in the browser tab.
+
+```html
+<title>Bike shop</title>
+```
+
+```html
+<meta charset="UTF-8" /> <title>Document</title>
+```
+
+### Common body elements
+
+HTML elements are both descriptive and functional. They can contain paragraphs, navigation, images, lists, link anchors, and more.
+
+Below are some examples of often-used HTML elements. It's essential to use the proper tags for the content you are building to maintain your project and guide your users through your page. Even though users may not see the tags you used, tags are often used to help inform what a web page is about and is used by accessibility tools like screen readers to improve the accessibility of your page.
+
+#### Containers
+
+Containers are meant to contain other HTML elements. Some examples are:
+
+- `header` - typically contains things like the name of the website, the logo, today's date, and other top-level information.
+- `nav`(igation) - typically contains links to other parts of the web page.
+- `footer` - typically contains copyright information and links to the sitemap (about, contact, etc.).
+- `main` - typically contains the main content of your web page, whether it is a blog, a new site, or an online store.
+- `aside` - typically contains essential information that is tangential to the main content, like definitions of technical terms.
+- `section` - typically used to break up a `main` tag into sections.
+- `div` - a generic container when nothing else seems to fit.
+
+Let's create a small webpage with some of these elements. Because these are all meant to be seen by the user, they will all go in the body tag.
+
+```html
+<body>
+  <header>
+    <nav></nav>
+  </header>
+  <main>
+    <div></div>
+    <section><article></article></section>
+    <section><article></article></section>
+  </main>
+  <aside></aside>
+  <footer></footer>
+</body>
+```
+
+#### Text
+
+Specific tags are designed to contain text. Some examples are
+
+- `p` - paragraph tag, this one separates different paragraphs from each other
+- `h1` - header, `h1` is the page's most important header. There are additional headers like `h2` and `h3`, which decrease in importance (think of newspaper headers, the biggest stories get the biggest headers). There are a total of 6 headers: h1 - h6.
+- `span` - this tag goes inside another text tag and denotes particular text within the text.
+- `em` - emphasis, the default appearance will be _italics_ and helps change the sentence's meaning: You _are_ late! vs _You_ are late!
+- `strong` - also meant for emphasis. It is **NOT** meant to be used for styling. Instead, it is to help clarify the text.
+- `code` - used to demonstrate a block of code.
+
+Let's add some of these tags to the web page:
+
+```html
+<body>
+  <header>
+    <h1>Bicycles!</h1>
+    <h2>The best bike shop in town<span>!</span></h2>
+    <nav>home page</nav>
+  </header>
+  <main>
+    <section><h3>Road Bikes</h3></section>
+    <section><h3>Dirt Bikes</h3></section>
+    <section><h3>Electric Bikes</h3></section>
+  </main>
+  <aside><code>if (bike) {console.log('yay!')}</code></aside>
+  <footer>Contact <strong>us!</strong></footer>
+</body>
+```
+
+Now we can view this page in a web browser. Navigate to the terminal and type.
+
+```
+open index.html
+```
+
+![First Bicycle HtML Page](./assets/bicycles-first.png)
+
+You'll notice that your web page looks quite plain and may even appear to look like it was styled in the 1990s. That's ok! HTML is only about the content of your web page. In a later lesson, you'll learn how to style it.
+
+#### Links
+
+You can link to other pages by using an anchor tag. The anchor (`a`) tag has an attribute called `href` (**h**ypertext **ref**erence).
+
+By default, the value `#` means this page. You can use it as a placeholder until you know the address of what you want to link. You can link to other pages on your website, which can be a relative path like `/about`, or you can use an absolute path to direct someone to an external webpage by starting the link with `http://`.
+
+```html
+<a href="#">home page</a>
+
+<a href="http://www.google.com">Google</a>
+```
+
+A link that has never been clicked will appear in blue with an underline. A link that has been clicked will appear purple with an underline. Using colors and text decorations can help users distinguish what is static on a web page and what can be interacted with. When you hover over an anchor tag, your cursor changes from a pointer to a hand.
+
+![example anchor tags](./assets/anchor-tags.png)
+
+#### Self-closing tags
+
+Some tags don't contain text or other content. Both of the break and horizontal line tags can be used to help improve the clarity of a web page:
+
+- `br` - creates a break between text.
+- `hr` - creates a horizontal line.
+
+To use a self-closing tag, the forward slash goes into the tag right away:
+
+```html
+<br />
+<hr />
+```
+
+Try to put either a **br**eak tag or a **h**orizontal **line** tag between the two anchor tags.
+
+`img` is another self-closing tag. It has two attributes:
+
+- `src` - the URL (path) to the image
+- `alt` - the alternative text to show if the image does not load or if someone is using an accessibility tool.
+
+You can search the [noun project](https://thenounproject.com) for simple and (relatively) small images to use.
+
+![noun project unicylce](./assets/noun-project-unicycle.png)
+
+This particular image is also stored in this lesson's assets folder. Open it in GitHub, then two-finger click to pull up a menu to copy the image address
+![image copy address](./assets/image-copy-address.png)
+
+And insert it into an image tag.
+
+```html
+<img
+  height="100"
+  src="https://github.com/pursuit-curriculum/unit-front-end-web-development/blob/main/intro-to-html/assets/noun-unicycle-1668913.png"
+  alt="person on a unicycle cartoon"
+/>
+```
+
+For now, you can add the attribute `height="100` to make the image smaller.
+
+> **Note**: image addresses can move and change anytime.
+
+You can also download the image and store it on your computer. Make sure you place it in the same folder as `index.html`, and you can change the source to be a relative path:
+
+```html
+<img
+  height="100"
+  src="/noun-unicycle-1668913.png"
+  alt="person on a unicycle cartoon"
+/>
+```
+
+![bicycles with images](./assets/bicycles-second.png)
+
+#### Lists
+
+There are two common lists:
+
+- unordered lists
+- ordered lists
+
+Both comprise the same inner elements **l**ist **i**tems or `<li>` tags.
+
+The outer element will determine whether the list is a numbered list or a bullet list.
+
+```html
+<h4>How to ride a bike:</h4>
 <ol>
-  <li>First item!</li>
-  <li>Second item!</li>
-  <li>Third item!</li>
+  <li>Put on a helmet and other safety gear</li>
+  <li>Get on the bike and go</li>
 </ol>
 ```
 
-If we save and reload, we can see that the list looks much nicer! The content is indented and the large space between each line is removed. Now if we add a fourth item and remove the first, the list updates accordingly and we don't have to worry about changing any numbers.
-
-### Unordered List Tags
-
-An _unordered list_ works in the same way that an ordered list does except now it uses standard bullets in place of numbers. To make our list unordered, we change our `<ol>` tags to `<ul>` tags.
-
 ```html
+<h4>Best reasons to own a bike:</h4>
 <ul>
-  <li>First item!</li>
-  <li>Second item!</li>
-  <li>Third item!</li>
+  <li>Fun</li>
+  <li>Cool</li>
 </ul>
 ```
 
-Now our list's numbers have been replaced by bullet points creating an unordered list.
+## Commenting out HTML
 
-> Take 3 minutes and add two kinds of lists: One unordered and one ordered. For your unordered list, put any 3 colors you can think of. For the ordered list, put your favorite 3 people, alive or dead.
-
-In both cases, the _entire_ list of items is wrapped in either an ordered or unordered list tag. This means that you **cannot** mix bullets and numbers in one list.
-You can, however, make a sub-list that is different from the main list. In the example below, the ordered sub-list will be indented further than the unordered main list.
+You can comment out code in HTML by using an arrow and dash syntax. The easiest way to do this is with the shortcut keys <kbd>command</kbd> <kbd>/</kbd>
 
 ```html
-<ul>
-  <li>First item!</li>
-  <li>Second item!</li>
-  <ol>
-    <li>This is ordered</li>
-    <li>So is this!</li>
-  </ol>
-  <li>Third item!</li>
-</ul>
+<!-- <h5> Comment out this code</h5> -->
 ```
 
-# 8. HTML tags: Links
+## Final Code
 
-Remember how we said _HyperText_ means that disparate web pages on the internet can connect to one another? That's one of the most important parts of the web as we know it, so **links** are pretty important HTML tags! Without them, it just wouldn't be HTML.
+### Image
 
-A link tag is very similar to the tags we've been working with except this tag accepts an _attribute_ that points to the link's destination. Every `a` tag includes an `href` attribute that accepts a URL where the link goes to. To add an attribute to an HTML tag, you put it **inside** the opening tag like so:
+![Final Bicycle Page](./assets/bicycles-final.png)
+
+### Code
 
 ```html
-<h2>Links</h2>
-<a href="https://www.google.com">Link text</a>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bike Shop</title>
+  </head>
+  <body>
+    <header>
+      <h1>Bicycles!</h1>
+      <h2>The best bike shop in town<span>!</span></h2>
+      <nav>
+        <a href="http://reddit.com">Home page</a>
+        <br />
+        <a href="http://www.google.com">Google</a>
+      </nav>
+    </header>
+    <div>
+      <h4>How to ride a bike:</h4>
+      <ol>
+        <li>Put on a helmet and other safety gear</li>
+        <li>Get on the bike and go</li>
+      </ol>
+      <h4>Best reasons to own a bike:</h4>
+      <ul>
+        <li>Fun</li>
+        <li>Cool</li>
+      </ul>
+    </div>
+    <main>
+      <img
+        height="100"
+        src="./noun-unicycle-1668913.png"
+        alt="person on a unicycle cartoon"
+      />
+      <section><h3>Road Bikes</h3></section>
+      <section><h3>Dirt Bikes</h3></section>
+      <section><h3>Electric Bikes</h3></section>
+    </main>
+    <aside><code>if (bike) {console.log('yay!')}</code></aside>
+    <footer>Contact <strong>us!</strong></footer>
+    <!-- <h5>Comment out this code</h5> -->
+  </body>
+</html>
 ```
-
-This link would direct the user to Google when they click it.
-
-Note that if we made our link `www.google.com` or `google.com` it _WOULD NOT_ work! It would try to go to a location on your computer. You need to include the `https://` because that tells the browser you are looking for an **outside** page on the Web--not on your computer.
-
-We normally don't have to type all that into the browser because the browser has been designed to assume you meant to include the `https://`.
-
-> Take 3 minutes and add various links. See what happens if you leave `https://` off. Also try starting your links with `/` instead of `https://`
-
-# 9. HTML tags: Images
-
-Image tags are used for embedding an image into our HTML page. Any page that has an image on it is using an **image tag**. An image tag is represented by `<img>` and similar to our `a` tags above, image tags accept attributes.
-
-With image tags, they need to be given a URL that points to the location of the image. This can be a URL from the internet or a location on your computer.
-
-> Note: it's best practice to not link to files on your computer, because when we start publishing our websites onto the internet, the images won't load. Links should generally always point to a website URL.
-
-The `src` (like _source_) attribute is what points to the image URL and the `alt` (like _alternate_) attribute is text that appears if the link is broken or the image cannot load.
-You should include _both_ for every `img` tag you use just to be safe (and also accessible).
-
-The `img` tag is also unique because the opening tag can close itself like so: `<img />`. While you can use the standard format (`<img></img>`), you'll find it is much easier to just type `<img/>`.
-
-```html
-<h2>Images</h2>
-<img
-  src="http://www.readersdigest.ca/wp-content/uploads/2013/03/6-facts-to-know-before-owning-a-puppy.jpg"
-  alt="Puppy!"
-/>
-```
-
-Aw cute! But wow that picture is _huge_! Luckily the `img` tag also accepts `width` and `height` attributes. In later lessons, we'll learn how to use CSS to format our images in a much better way, but for now using the `width` and `height` attributes will do the job! By setting our `width` and `height` to `300`, we are actually setting them both equal to 300 pixels in height and width. Writing style attributes directly into the HTML is called inline markup. This is generally bad practice; later we will learn cleaner ways to style our HTML.
-
-```html
-<h2>Images</h2>
-<img
-  src="http://www.readersdigest.ca/wp-content/uploads/2013/03/6-facts-to-know-before-owning-a-puppy.jpg"
-  alt="Puppy!"
-  width="300"
-  height="300"
-/>
-```
-
-Yay! But it looks a little... _off_. This is because we specified a height and width **without** respect to the ratio of the photo. To solve this problem, just modify either the height _or_ the width--not both. If we just set the width to 300, its height will fill automatically.
-
-```html
-<h2>Images</h2>
-<img
-  src="http://www.readersdigest.ca/wp-content/uploads/2013/03/6-facts-to-know-before-owning-a-puppy.jpg"
-  alt="Puppy!"
-  width="300"
-/>
-```
-
-Much better!
-
-> Take a few minutes and add some more images using our favorite placeholder site: [placekitten](https://placekitten.com/)

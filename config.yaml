@@ -64,7 +64,7 @@ sequence:
       pursuit_path: intro-to-css
       kind: lesson
       activity: repository
-    - name: CSS selectors
+    - name: CSS Selectors
       pursuit_path: css-selectors
       kind: lesson
       activity: repository
@@ -86,7 +86,7 @@ sequence:
       activity: repository
       starter: intro-to-dom
     - name: events
-      pursuit_path: events
+      pursuit_path: Events
       kind: lesson
       activity: repository
     - name: Forms with Events

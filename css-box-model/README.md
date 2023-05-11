@@ -2,10 +2,10 @@
 
 ## Learning Objectives
 
-By the end of this lesson you should be able to:
+By the end of this lesson, you should be able to:
 
 - Describe the CSS Box Model.
-- Differentiate between values of the display property, and how it may affect the box model.
+- Differentiate between display property values and how they may affect the box model.
 - Use the position property to break the normal flow of the page.
 
 ---
@@ -21,7 +21,7 @@ Every HTML element has default box properties made up of:
 - display
 - position
 
-Together, these make up the box model. The box model is essentially a box that wraps around each HTML element. In your browser developer tools you can see the box model of any element by hovering over it.
+Together, these make up the box model. The box model is essentially a box that wraps around each HTML element. In your browser developer tools, you can see the box model of any element by hovering over it.
 
 The below element has:
 
@@ -33,26 +33,33 @@ The below element has:
 
 ![box model dev tools](./assets/box-model-dev-tools.png)
 
-As you can see, the content is in the center, surrounded by padding, then the border, then the margin. The position, although shown in the image above, does not wrap around an HTML element in the same way the others do but instead determines its place in the "flow" of the page. The `position` property is discussed in more detail below.
+As you can see, the content is in the center, surrounded by padding, the border, and the margin. The position, although shown in the image above, does not wrap around an HTML element in the same way the others do but instead determines its place in the "flow" of the page. The `position` property is discussed in more detail below.
 
-The order of these components always stays the same.
+The order of these properties always stays the same (content in the middle, the margin is the outermost).
+
+### Developer Tools
+
+You can inspect any HTML element on a page by opening developer tools. If you are using Chrome, you can use the keyboard shortcut <kbd>command</kbd>
+<kbd>option</kbd> <kbd>i</kbd>.
+
+This will allow you to choose any element on the page and see its properties and box model.
 
 ### Content
 
-Content generally refers to text and other HTML elements. Typically, content will adjust to the maximum width allowed by its container (parent HTML element) or viewport. Once it has reached maximum width, content will expand in terms of height.
+Content generally refers to text and other HTML elements within the element you inspect. Typically, the content will adjust to the maximum width allowed by its container (parent HTML element) or viewport (width/height of the browser). Once it has reached maximum width, the content will expand in height.
 
-For example, take a look at the following empty `div`. A `div` has a default `display` of `block`, which means it can be the only element going across and it takes up the entire width of the parent element. It has a height of `0`, because it currently has no content.
+For example, take a look at the following empty `div`. A `div` has a default `display` of `block`, which means it can be the only element going across, and it takes up the entire width of the parent element. It has a height of `0` because it currently has no content.
 
 ```html
 <!-- index.html -->
 <div></div>
 ```
 
-In your browser `dev` tools (open with: <kbd>command</kbd> <kbd>shift</kbd> <kbd>i</kbd>) you can see the box model of any element by hovering over it.
+In your browser `dev` tools (open with <kbd>command</kbd> <kbd>shift</kbd> <kbd>i</kbd>), you can see the box model of any element by hovering over it.
 
 ![Image of the box model for an empty div element.](./assets/empty-div.png)
 
-By default a `div` has:
+By default, a `div` has:
 
 - no content (height of 0)
 - width matching the viewport (browser) size
@@ -60,7 +67,7 @@ By default a `div` has:
 - no border
 - no margins
 
-Let's add some content to the `div` element as well as some CSS rules to update its appearance and change the box model.
+Let's add some content to the `div` element and some CSS rules to update its appearance and change the box model.
 
 ```html
 <!-- index.html -->
@@ -90,15 +97,15 @@ div p {
 
 ![Image showing the box model attributes of the overall div.](./assets/styled-div-and-p.png)
 
-As we can see, the content (text), stays within the boundary of the container's width. Then it automatically expands downward, increasing the height of itself `p` elements, and the height of the `div` element.
+As we can see, the content (text) stays within the boundary of the container's width. Then it automatically expands downward, increasing the height of itself `p` elements and the height of the `div` element.
 
-If we look at the box model for a `p` element, we'll notice that it has a `margin-top` and `margin-bottom` of `16px`. This was not added by our CSS above, but instead is included as part of the default styling for `p` elements.
+If we look at the box model for a `p` element, we'll notice that it has a `margin-top` and `margin-bottom` of `16px`. This was not added by our CSS above but instead is included as part of the default styling for `p` elements.
 
 ![Image showing the box model attributes of the paragraph element.](./assets/p-with-text.png)
 
-With practice and usage, you will get used to what to expect for default settings of different elements. You may notice, if you use different browsers, that the defaults might be slightly different.
+With practice and usage, you will get used to what to expect for the default settings of different elements. If you use other browsers, you may notice that the defaults might be slightly different.
 
-When determining what element to use, you should choose the [semantic](https://www.w3schools.com/html/html5_semantic_elements.asp) one and then style it correctly. For example, if you need to make a top level `heading`, but you prefer the size and margins of an `h2`, you should use an `h1`, but then style it, with CSS, to make it the size you want.
+When determining what element to use, choose the [semantic](https://www.w3schools.com/html/html5_semantic_elements.asp) one and then style it correctly. For example, if you need to make a top-level `heading` but prefer the size and margins of an `h2`, you should use an `h1` but then style it with CSS to make it the size you want.
 
 ### Padding
 
@@ -117,7 +124,7 @@ Notice that `padding: 16px` adds padding to all four sides of the paragraph, mak
 
 ![Image showing padding applied to the paragraph elements.](./assets/p-w-padding.png)
 
-Padding can also be added to the `div` element, which will place space around its content, which is all of the paragraph elements.
+Padding can also be added to the `div` element, which will place space around its content, all of the paragraph elements.
 
 ```css
 div {
@@ -141,15 +148,15 @@ The base width is set by the content, which in this case is constrained due to t
 
 The width is now `100px` + `16px` + `16px` + `2px` + `2px` = `136px`
 
-If you need to constrain the width to be exactly `100px`, regardless of padding and borders, you can use the `box-sizing` property.
+You can use the 'box-sizing' property if you need to constrain the width to be precisely `100px`, regardless of padding and borders.
 
 ```css
 box-sizing: border-box;
 ```
 
-This changes how the element's width is calculated, if one is set. Instead of using `100px` for the content width, the overall width of the element will be constrained to the given value for the `width` property.
+If one is set, this changes how the element's width is calculated. Instead of using `100px` for the content width, the overall width of the element will be constrained to the given value for the `width` property.
 
-We can also make each side of padding different. The arguments go like a clock: they start top (`12px`), then right to (`3px`), then bottom (`6px`) and then left (`9px`)
+We can also make each side of padding different. The arguments go like a clock: they start top (`12px`), then right (`3px`), then bottom (`6px`), and then left (`9px`)
 
 ```css
 div {
@@ -177,7 +184,7 @@ div {
 }
 ```
 
-Then, you can change the properties, as needed.
+Then, you can change the properties as needed.
 
 ## Margins
 
@@ -185,18 +192,18 @@ Margins add space outside of the border. Other elements will not begin until the
 
 One common thing to do with an HTML element is to center it horizontally.
 
-To do so, we must set the width to be less than 100% of the viewport (browser) or container. Then we must set the left and right margin properties to `auto`. This will "automatically" center the object, horizontally.
+To do so, we must set the width to be less than 100% of the viewport (browser) or container. Then we must set the left and right margin properties to `auto`. This will "automatically" center the object horizontally.
 
-When you use two arguments for `padding` or `margin`, the first represents top/bottom and the second represents left/right
+When you use two arguments for `padding` or `margin`, the first represents top/bottom, and the second represents left/right.
 
 ```css
 div {
   width: 300px;
   border: 2px solid teal;
-  /* Top and bottom padding is 16px. Left and right padding is 20px. */
+  /* Top and bottom padding is 16px. The left and right padding is 20px. */
   padding: 16px 20px;
   box-sizing: border-box;
-  /* Top and bottom margin is 4px. Left and right padding is auto. */
+  /* Top and bottom margins are 4px. Left and right padding is auto. */
   margin: 4px auto;
 }
 ```
@@ -228,13 +235,13 @@ There are a few different display properties:
 
 ### Block
 
-This is the default for many elements such as headings, paragraphs, `div` elements, `article` elements, and unordered lists.
+This is the default for many elements, such as headings, paragraphs, div elements, article elements, and unordered lists.
 
-By default, these elements are the full width of the viewport or container element. You cannot put another element horizontally next to this element. You would need to change the `display` property to do that.
+By default, these elements are the entire viewport or container element width. You cannot put another element horizontally next to this element. You would need to change the `display` property to do that.
 
 ### Inline
 
-This is the default for HTML elements that go inside a text tag such as a `span` element. Height and width properties have no effect on this display type. It keeps the element in line with the parent element.
+This is the default for HTML elements inside a text tag, such as a `span` element. Height and width properties do not affect this display type. It keeps the element in line with the parent element.
 
 For example, wrapping the word `more` inside `span` tags will not affect where it is in the `p` element. Typically, one would use the `span` tag to add additional style to a specific word, such as changing the color.
 
@@ -246,16 +253,16 @@ For example, wrapping the word `more` inside `span` tags will not affect where i
 ```CSS
 /* main.css */
 p > span {
-    color: orange;
-    font-style: italic;
+ color: orange;
+ font-style: italic;
 }
 ```
 
-Another common element with a default display of `inline` is an `img` tag. If you would like to center an image, you would need to set the display to `block` and then set the left and right `margin` values to be equal to `auto`.
+Another common element with a default inline display is an `img` tag. If you would like to center an image, you would need to set the display to `block` and then set the left and right `margin` values to be equal to `auto`.
 
 ### Inline-block
 
-The `inline-block` value has the same behavior as an `inline` display, however you can set width and height properties. An example of an element with this as a default display property is a `button`.
+The `inline-block` value behaves like an `inline` display. However, you can set width and height properties. An example of an element with this as a default display property is a `button`.
 
 Let's try an example. We can add this code below our `div` element.
 
@@ -268,17 +275,17 @@ Let's try an example. We can add this code below our `div` element.
 </ul>
 ```
 
-And then add the following to our CSS. The CSS below also removes some of the default styling from lists, such as the default padding that is typically applied to `ul` elements and the bullet point `list-style`.
+And then add the following to our CSS. The CSS below removes some default styling from lists, such as the default padding typically applied to `ul` elements and the bullet point `list-style`.
 
 ```CSS
 ul {
-    border: 3px solid lightsalmon;
-    width: 50%;
-    margin: auto;
+ border: 3px solid lightsalmon;
+ width: 50%;
+ margin: auto;
 }
 
 li {
-    border: 1px solid mediumslateblue;
+ border: 1px solid mediumslateblue;
 }
 
 ```
@@ -289,24 +296,24 @@ Let's change some default styling from the unordered list and list items.
 
 ```CSS
 ul {
-    border: 3px solid lightsalmon;
-    width: 50%;
-    margin: auto;
-    padding-left: 0;
+ border: 3px solid lightsalmon;
+ width: 50%;
+ margin: auto;
+ padding-left: 0;
 }
 
 li {
-    border: 1px solid mediumslateblue;
-    text-align: center;
-    padding: 8px;
-    list-style: none;
+ border: 1px solid mediumslateblue;
+ text-align: center;
+ padding: 8px;
+ list-style: none;
 }
 
 ```
 
 ![Image of the unordered list with styling.](./assets/unstyled-list.png)
 
-The image above shows that each `li` element has a default `display` value of `block`. Each `li` element takes up the entire width of its parent element, the `ul`, and no `li` elements share space next to one another.
+The image above shows that each `li` element has a default `display` value of `block`. Each `li` element takes up the entire width of its parent element, and the `ul` and no `li` elements share space next to one another.
 
 Changing the `display` property to a value of `inline-block` will allow for each element to appear next to one another. However, it will still retain rules applied to the box model, such as the `padding` property.
 
@@ -322,7 +329,7 @@ li {
 
 ![Image of the list items with a display of inline-block.](./assets/unordered-list-inline-block.png)
 
-If the `display` property is set to `inline`, you'll see that the padding around each element is no longer respected by the parent element. Interestingly, you'll notice that the styling still applies.
+If the `display` property is set to `inline`, you'll see that the parent element no longer respect the padding around each element. Interestingly, you'll notice that the styling still applies.
 
 ![Image of the list items with a display of inline.](./assets/list-elements-inline.png)
 
@@ -338,7 +345,8 @@ li {
 
 ### BONUS: Flex
 
-Flex is a newer display, introduced in 2009. [Flex](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) sets the `flexbox` property on the container which will impact all the children components. Flexbox is great for:
+Flex is a newer display introduced in 2009. [Flex](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) sets the `flexbox` property on the container, impacting all the children components.
+Flexbox is great for:
 
 - Centering elements (an alternative to `margin: auto`)
 - [Setting elements equidistantly from each other](https://css-tricks.com/equidistant-objects-with-css/)
@@ -358,47 +366,45 @@ ul {
 }
 ```
 
-In this course, you will not cover flexbox but are encouraged to explore it on your own.
+You will not cover flexbox in this course but are encouraged to explore it independently. A top resource is [CSS Tricks: A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 
 ### Grid
 
-[Grid](https://css-tricks.com/snippets/css/complete-guide-grid/) is the newest display type. It allows elements to be laid out in a responsive grid and thus allows creating complex, responsive layouts to be achieved with relative ease, especially in contrast to older techniques.
-
-You will cover CSS Grid at a later time.
+[CSS Tricks: A Complete Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/) is the newest display type. It does not replace Flexbox. Grid and Flexbox can be used together to solve a lot of challenging layouts, especially in creating a great responsive design (looking good on multiple browser sizes, looking good on various devices and orientations). It allows elements to be laid out in a responsive grid. It thus enables the creation of complex, responsive layouts to be achieved with relative ease, especially in contrast to older techniques.
 
 ## Position
 
-By default, HTML elements have a property of `static`. Elements are loaded from top to bottom and as each element takes up space, it moves the next element to the right and down.
+By default, HTML elements have a property of `static`. Elements are loaded from top to bottom, and as each element takes up space, it moves the next element to the right and down.
 
 However, sometimes we want to take things out of that normal flow.
 
-We might want them to be `fixed` in position. That is, no matter where other elements are in the page, nor the size of the viewport, the element should be fixed in the exact position in relation to the viewport.
+We might want them to be `fixed` in position. That is, no matter where other elements are on the page or the viewport's size, the aspect should be fixed in the exact place in relation to the viewport.
 
-For example, many websites contain a navigation bar that "sticks" to the top of the page as you scroll down the page.
+For example, many websites contain a navigation bar that "sticks" to the top of the page as you scroll down.
 
 ![Image showing the Pursuit website's sticky navigation.](./assets/sticky-nav.png)
 
-We may want an element that is `absolute` in position, relative to another, non-static element.
+We may want an element that is `absolute` in position relative to another, non-static element.
 
 For example, pop-ups, also called modals, are often positioned in the middle of the page using the `absolute` value.
 
 ![Image of a pop-up on the Vimeo website.](./assets/popup.png)
 
-Another one is `relative` - where the element is moving from where it _would_ be to the specified offset. This is useful when you are working with other elements that are no longer set to `static`.
+Another is `relative` - where the element moves from where it _would_ be to the specified offset. This is useful when working with other elements no longer set to `static`.
 
-A great way to learn more how these properties behave is to play around with the values. The following website will let you do just that.
+Playing around with the values is a great way to learn how these properties behave. The following website will let you do just that.
 
 - [W3 Schools Demo](https://www.w3schools.com/cssref/playit.asp?filename=playcss_position&preval=absolute)
 
 ### Z-Index
 
-Sometimes you want to be sure that one HTML element is on top of another one. This is only something you can set when the `position` property has been changed to a value other than `static`, such as `absolute`, `fixed`, `relative` etc.
+Sometimes you want to be sure that one HTML element is on top of another. You can only set this when the `position` property has been changed to a value other than `static`, such as `absolute`, `fixed`, `relative` etc.
 
-You can choose how the elements stack by giving them a `z-index` number. Remember the `x-axis` goes across, the `y-axis` up/down and the `z-axis` goes towards/away from you (in a 3D plane).
+You can choose how the elements stack by giving them a `z-index` number. Remember, the `x-axis` goes across, the `y-axis` goes up/down, and the `z-axis` goes towards/away from you (in a 3D plane).
 
 ```html
 <!-- index.html -->
-<h1>This is an awesome pop up message</h1>
+<h1>This is an awesome pop-up message</h1>
 ```
 
 ```css
@@ -416,7 +422,7 @@ h1 {
 
 ![Image showing a heading appearing over other text.](./assets/awesome-pop-up-front.png)
 
-If you wanted, you could move this pop up to be behind the other elements by changing the `z-index` to a negative number, such as `-1`.
+You could move this pop-up behind the other elements by changing the `z-index` to a negative number, such as `-1`.
 
 ```css
 h1 {
@@ -432,7 +438,7 @@ h1 {
 }
 ```
 
-> **Note:** The following guide could help you in centering the modal.
+> **Note:** The following guide could help you center the modal.
 >
 > - [CSS Tricks: Styling Modals](https://css-tricks.com/considerations-styling-modal/)
 
@@ -460,7 +466,7 @@ Full code:
     <li>two</li>
     <li>three</li>
   </ul>
-  <h1>This is an awesome pop up message</h1>
+  <h1>This is an awesome pop-up message</h1>
 </body>
 ```
 

@@ -32,16 +32,12 @@ sequence:
       pursuit_path: json-and-persisting-data
       kind: lesson
       activity: repository
-    - name: Command-Line CRUD Application
-      pursuit_path: command-line-crud-application
-      kind: lesson
-      activity: repository
     - name: Error Handling
       pursuit_path: error-handling
       kind: lesson
       activity: repository
-    - name: Command Line Project
-      pursuit_path: command-line
+    - name: Command Line Inventory Application
+      pursuit_path: command-line-inventory-app
       kind: project
       activity: repository
       points_possible: 100

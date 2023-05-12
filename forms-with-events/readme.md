@@ -1,22 +1,22 @@
 # Forms with Events
 
-Forms and their various fields work a bit differently than other HTML elements. They store the data inside of them in a different way and have different types of events they can trigger.
+Forms and their various fields work a bit differently than other HTML elements. They store the data inside of them differently and have different types of events they can trigger.
 
-In this lesson, you'll learn the very basics of working with forms and events. First, you'll learn how to access the data from specific form fields. Then, you'll learn how add event listeners to forms so that instead of refreshing the page, they can do whatever you like.
+This lesson will teach you the basics of working with forms and events. First, you'll learn how to access the data from specific form fields. Then, you'll learn how to add event listeners to forms so they can do whatever you like instead of performing their default behavior.
 
 ## Learning Objectives
 
-By the end of this lesson you should be able to:
+By the end of this lesson, you should be able to:
 
 - Access data directly from form fields.
 - Describe and utilize `event.preventDefault()` to stop the default behavior of certain events.
-- Capture the data submitted in a form through the use of the `name` attribute and the `event` object.
+- Capture the data submitted in a form using the `name` attribute and the `event` object.
 
 ---
 
 ## Accessing data from form fields
 
-Recall that to access the text inside of most elements, you can use the `.textContent` property.
+Recall that to access the text inside most elements. You can use the `.textContent` property.
 
 ```html
 <!-- index.html -->
@@ -29,7 +29,7 @@ const paragraph = document.querySelector("p");
 console.log(paragraph.textContent);
 ```
 
-This will not work for form fields. Instead, to access the value of a form field you should use the `.value` property. This will return the current value of the form field. In the case of text inputs, this means returning whatever has been typed inside of the field.
+This will not work for form fields. Instead, to access the value of a form field, you should use the `.value` property. This will return the current value of the form field. In the case of text inputs, this means returning whatever has been typed inside the field.
 
 ```html
 <!-- index.html -->
@@ -45,7 +45,7 @@ const title = document.querySelector("input[type='text']");
 console.log(title.value);
 ```
 
-For dropdowns (i.e. `select` elements), `.value` will work as well as long as your `option` elements include `value` attributes.
+For dropdowns (i.e., `select` elements), `.value` will work as well, as long as your `option` elements include `value` attributes.
 
 ```html
 <!-- index.html -->
@@ -99,9 +99,9 @@ console.log(nonFiction.checked); //> false
 
 ## Default behaviors
 
-As you may have seen already, some elements have a default behavior. For example, links attempt to send the user to a different place, either on the same page or a different page. Similarly, forms have the default behavior of sending a request. This typically leads to the page being refreshed, when certain attributes are missing from the form field.
+As you may have seen already, some elements have a default behavior. For example, links attempt to send the user to a different place, either on the same page or another page. Similarly, forms have the default behavior of sending a request. This typically leads to the page being refreshed when specific attributes are missing from the form field.
 
-When working with JavaScript on the front end, some of these behaviors are not desirable. Thankfully, it is possible to stop the behaviors by using a method built-in to the `event` object: `.preventDefault()`.
+Some of these behaviors are undesirable when working with JavaScript on the front end. Thankfully, it is possible to stop the behaviors using a method built-in to the `event` object: `.preventDefault()`.
 
 `event.preventDefault()` does just what it says: it prevents the default event from being fired. For an example, look below.
 
@@ -137,15 +137,15 @@ form.addEventListener("submit", (event) => {
 In the JavaScript code above, the following is happening:
 
 1. The form element is selected and assigned to a variable.
-1. An event listener is added to the element. When the "submit" event is triggered, the given callback function will run.
-1. Inside the callback function, `event.preventDefault()` is called. This stops the form from refreshing the page. If you are using `event.preventDefault()`, you should always put it first in the event listener.
+1. An event listener is added to the element. The callback function will run when the "submit" event is triggered.
+1. Inside the callback function, `event.preventDefault()` is called. This stops the form from refreshing the page. If you use `event.preventDefault()`, you should always put it first in the event listener.
 1. The values from the `#title` and `#author` inputs are logged out.
 
-The `event.preventDefault()` method is most commonly used with forms, however it can be used with other elements like links and form fields.
+The `event.preventDefault()` method is commonly used with forms. However, it can be used with other elements like links and form fields.
 
 ## Accessing form data
 
-In the previous example, each individual value was accessed from each form field. While it's possible to do this, there is a better way.
+In the previous example, each value was accessed from each form field. While it's possible to do this, there is a better way.
 
 When submitting a form, it is possible to access all form fields in the form from the `event` object. If a `name` attribute is added to the form field, a new property with that same name will be added to the `event.target` element.
 
@@ -175,14 +175,14 @@ form.addEventListener("submit", (event) => {
 });
 ```
 
-If the name refers to multiple inputs, as would be the case with checkboxes or radio buttons, the property on `event.target` will return a node list. This can be looped through to access each individual value and "checked" status.
+If the name refers to multiple inputs, as would be the case with checkboxes or radio buttons, the property on `event.target` will return a node list. This can be looped through to access each value and "checked" status.
 
 ```js
 const form = document.querySelector("form");
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  // A list of all checkboxes with the name "genre"
+  // A list of all checkboxes with the name "genre".
   const genres = event.target.genre;
 
   for (let genre of genres) {
@@ -190,7 +190,3 @@ form.addEventListener("submit", (event) => {
   }
 });
 ```
-
-For a more full example of this, you may visit the repl below.
-
-- [Events with Forms: Submitting](https://replit.com/@Pursuit/Events-with-Forms-Submitting)

@@ -89,10 +89,12 @@ sequence:
       pursuit_path: events
       kind: lesson
       activity: repository
+      starter: events
     - name: Forms with Events
       pursuit_path: forms-with-events
       kind: lesson
       activity: repository
+      starter: forms-with-events
     - name: Inventory Web Application
       pursuit_path: inventory-web-application
       kind: project

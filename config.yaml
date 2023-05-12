@@ -85,8 +85,8 @@ sequence:
       kind: lesson
       activity: repository
       starter: intro-to-dom
-    - name: events
-      pursuit_path: Events
+    - name: Events
+      pursuit_path: events
       kind: lesson
       activity: repository
     - name: Forms with Events

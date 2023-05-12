@@ -138,7 +138,7 @@ You will likely get an error similar to the one below:
 
 This is because you are querying for the `h1` element before it has loaded onto the web page. In this case, your `app.js` code is loaded first. You need a way to defer the code from running right away.
 
-You can add a defer attribute into the script tag to do that.
+You can add a defer attribute into the script tag to defer running the code in this file until the HTML has fully loaded.
 
 ```js
 <script src="app.js" defer></script>
@@ -215,7 +215,7 @@ const eggos = document.createElement('img')
 
 Where is it?
 
-In Chrome console, but not in the DOM:
+The Chrome console shows it is in memory, but not in the DOM:
 
 ![element without a place in the DOM](./assets/variable-eggos.png)
 
@@ -312,7 +312,7 @@ document.querySelectorAll("li")[3].remove();
 
 ### Appendix
 
-#### Common 'Vanilla' JavaScript DOM Commands
+#### Common `Vanilla` JavaScript DOM Commands
 
 DOM commands fall into a few broad categories:
 
@@ -351,6 +351,8 @@ You will only need a small handful of these commands for now. Here is a sample:
   - either gets or sets the the innerText of the node
 - node.setAttribute()
   - sets an attribute on an HTML element
+- node.getAttribute()
+  - gets an attribute value from an HTML element
 - node.removeAttribute()
   - removes an attribute from an HTML element
 - node.classList

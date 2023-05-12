@@ -210,6 +210,44 @@ A link that has never been clicked will appear in blue with an underline. A link
 
 ![example anchor tags](./assets/anchor-tags.png)
 
+##### Linking multiple pages
+
+You can link multiple pages by following the folder structure.
+
+Imagine if you have a website with the following 3 index pages. One top level `index.html` page that is the `home` page and then, two more `index.html` pages for cats and dogs. The file and folder structure would look like this:
+
+```
+.
+├── cats
+│   ├── index.html
+│   ├── script.js
+│   └── style.css
+├── dogs
+│   ├── index.html
+│   ├── script.js
+│   └── style.css
+├── index.html (home page)
+└── style.css
+```
+
+To link to the cats and dog pages on the home page, your anchor tags would look like this
+
+```html
+<a href="./index.html">Home</a>
+<a href="./dogs/index.html">Dogs</a>
+<a href="./cats/index.html">Cats</a>
+```
+
+To link, to the other pages from the cats page would look like this:
+
+```html
+<a href="../index.html">Home</a>
+<a href="../dogs/index.html">Dogs</a>
+<a href="#">Cats</a>
+```
+
+Notice that linking the pages follows the same file system pattern you have learned for navigating the terminal.
+
 #### Self-closing tags
 
 Some tags don't contain text or other content. Both of the break and horizontal line tags can be used to help improve the clarity of a web page:

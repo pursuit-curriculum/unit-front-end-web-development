@@ -1,8 +1,8 @@
 # Introduction to Forms
 
-It may seem strange, but many types of user interactions on the web are through forms. For example, you're working with forms whenever you search on YouTube, purchase a product from your favorite online store, or submit a post to your favorite social media site.
+Many types of user interactions on the web are through forms. For example, you're working with forms whenever you search on YouTube, purchase a product from your favorite online store, or submit a post to your favorite social media site.
 
-In this lesson, you'll learn the basics behind building forms with HTML. You will not yet know how to use the inputted data -- that will be for a later lesson!
+In this lesson, you'll learn the basics behind building forms with HTML and capturing the input.
 
 ## Learning Objectives
 
@@ -32,6 +32,8 @@ In general, HTML forms will look something like the image below.
 ![Image of a basic form that looks to allow the user to enter a blog post.](./images/basic-blog-form.png)
 
 Forms generally consist of multiple _fields_, such as "Title, " allowing for user interaction. Forms also typically have a _submit button_, such as the "Create Post" button above, which performs some action with the data inserted into the field.
+
+You can create more creative interpretations of forms, however, for web accessibility, it is best to keep the forms in their standard format.
 
 ### The form element
 

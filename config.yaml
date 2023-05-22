@@ -31,6 +31,9 @@ sequence:
     - name: JSON and Persisting Data
       pursuit_path: json-and-persisting-data
       kind: lesson
+    - name: Command-line CRUD Application
+      pursuit_path: command-line-crud-application
+      kind: lesson
       activity: repository
     - name: Error Handling
       pursuit_path: error-handling
@@ -89,10 +92,12 @@ sequence:
       pursuit_path: events
       kind: lesson
       activity: repository
+      starter: events
     - name: Forms with Events
       pursuit_path: forms-with-events
       kind: lesson
       activity: repository
+      starter: forms-with-events
     - name: Inventory Web Application
       pursuit_path: inventory-web-application
       kind: project

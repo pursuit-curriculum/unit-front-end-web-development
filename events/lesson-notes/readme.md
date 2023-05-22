@@ -11,9 +11,9 @@ By the end of this lesson you should be able to:
 
 ## Setup
 
-Begin by forking the following Repl.it.
+Begin by forking the following repository:
 
-- [Repl.it: Dog Site](https://replit.com/@Pursuit/Events-Dog-Site)
+- [Dog Site](https://github.com/pursuit-curriculum-resources/starter-events)
 
 ## Guiding questions
 
@@ -24,9 +24,10 @@ Begin by forking the following Repl.it.
   - What will the "-" and "+" buttons do to the page when clicked?
   - Will both the "-" and "+" button work for both of the dogs on the page? Why or why not?
   - Describe how the following line of code removes a single heart from the `.hearts` element.
-    ```js
-    hearts.textContent = hearts.textContent.slice(0, -1);
-    ```
+
+```js
+hearts.textContent = hearts.textContent.slice(0, -1);
+```
 
 - Update the code so that all `.increment` and `.decrement` elements have the relevant event listeners on them. To do so you will need to:
 
@@ -52,18 +53,50 @@ Begin by forking the following Repl.it.
 
   - [MDN: Node.parentNode](https://developer.mozilla.org/en-US/docs/Web/API/Node/parentNode)
 
-  Next, notice that you can actually call `.querySelector()` on individual nodes as well. The link below describes how this works.
+Recall that moving through the DOM is called traversal. While traversal is a vital feature of the DOM methods. It's also important to limit traversal, when possible, so that your code does not end up too brittle.
 
-  - [MDN: Element.querySelector()](https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelector)
+For example, if you did something like `element.parentNode.parentNode.children[1]` and, later, you moved the buttons to be below the hearts, your code would break and you would have to rewrite your JavaScript code.
 
-  Given this information, how can you use the element returned by `event.target` to traverse to the relevant `.hearts` element?
+Note that you can call `.querySelector()` on individual nodes instead of `document`, which can help you write code is more easily maintained. When you call `.querySelector()` on a node, that node now serves as the root and the query will only look at elements inside the selected node.
 
-  This could be a difficult challenge! Take your time to think through what needs to happen before coding. Keep in mind that there are actually multiple ways to solve this problem.
+Now, if you were to move the hearts above the buttons, it won't break the code. The link below describes in more detail how this works.
+
+- [MDN: Element.querySelector()](https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelector)
+
+Given this information, how can you use the element returned by `event.target` to traverse to the relevant `.hearts` element?
+
+This could be a difficult challenge! Take your time to think through what needs to happen before coding. Keep in mind that there are actually multiple ways to solve this problem.
+
+Write out the steps you'd need to take and then try to code it. Solving a problem and coding are two separate tasks. If you solve the problem first, then all you need to do is translate it to code. If you try to solve things with code without a plan it can be a much more frustrating experience.
 
 - At this point, your code should allow for clicking on either "-" or "+" button. When you click, the relevant count of hearts should decrease or increase, respectively.
 
-  Update your code so that the minimum number of hearts possible is one, while the maximum is three.
+<details><summary>Possible solution</summary>
 
-  Is any DOM manipulation needed to add this feature?
+```js
+const incrementButtons = document.querySelectorAll(".increment");
+
+for (let button of incrementButtons) {
+  button.addEventListener("click", (e) => {
+    const hearts = e.target.parentNode.parentNode.querySelector(".hearts");
+    hearts.textContent += "❤";
+  });
+}
+
+const decrementButtons = document.querySelectorAll(".decrement");
+
+for (let button of decrementButtons) {
+  button.addEventListener("click", (e) => {
+    const hearts = e.target.parentNode.parentNode.querySelector(".hearts");
+    hearts.textContent = hearts.textContent.slice(0, -1);
+  });
+}
+```
+
+</details>
+
+Finally, update your code so that the minimum number of hearts possible is one, while the maximum is three.
+
+Is any DOM manipulation needed to add this feature?
 
 - Take a look at your code. Is there any duplication? Any helper functions that could be created from what you've accomplished? Any patterns you notice?

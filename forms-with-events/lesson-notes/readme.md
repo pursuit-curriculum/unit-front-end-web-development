@@ -15,7 +15,7 @@ By the end of this lesson, you should be able to:
 
 Begin by forking the following project.
 
-- [Repl.it: Address Book](https://replit.com/@Pursuit/Events-with-Forms-Address-Book)
+- [ Address Book Starter Code](https://github.com/pursuit-curriculum-resources/starter-forms-with-events)
 
 ## Guiding questions
 

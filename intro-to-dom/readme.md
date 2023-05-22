@@ -51,6 +51,10 @@ Look at the following HTML:
 </html>
 ```
 
+Which should render similar to this view:
+
+![Starting view](./assets/starting-view.png)
+
 > **Note**: If the image is broken, there is a copy in the lesson assets folder called `stranger-things`, or you can use a search engine to find a similar image.
 
 You can see that there is a hierarchy among the elements. Some elements are children. Some are parents. Some are siblings.
@@ -63,7 +67,7 @@ The orange is the top-level `document` or the root. As you look at this image, y
 
 This structure can be represented as an object, and this object is called the `Document Object Model` or DOM for short.
 
-When a webpage loads, two things happen, the graphical representation of the HTML is loaded, and that's what the browser sees. But also, behind the scenes, the HTML is also loaded as an object.
+When a webpage loads, two things happen, the graphical representation of the HTML is loaded, and that's what the user sees. But also, behind the scenes, the HTML is also loaded as an object.
 
 You can code along or follow along. If you created a new project and added the above HTML to it, you can do the following:
 
@@ -98,7 +102,7 @@ One method is called `querySelector`. You pass it the name of the element you'd 
 document.querySelector("h1");
 ```
 
-Once you've accessed the element, you can change its inner text. When you press enter, you should also see the text on the webpage itself change:
+Once you've accessed the element, you can change its `innerText` property value. When you press enter, you should also see the text on the webpage itself change:
 
 ![Query selector inner text change](./assets/query-selector-innertext-change.png)
 
@@ -114,7 +118,7 @@ To connect a JavaScript file to an HTML file, you must use a `script` tag with a
 <script src="app.js"></script>
 ```
 
-Using the autocomplete feature in your text editor may also add an attribute of `charset`. You can keep this default in place.
+Using the autocomplete feature in your text editor may also add an attribute of `charset` or other defaults. You can keep these defaults in place.
 
 Add a console log to your `app.js` file to confirm that your files are connected.
 
@@ -211,7 +215,9 @@ There are tons of different things you can do. The critical thing to note is how
 
 You can create a new element. Try a new image:
 
-const eggos = document.createElement('img')
+```js
+const eggos = document.createElement("img");
+```
 
 Where is it?
 
@@ -246,7 +252,7 @@ eggos.setAttribute(
 
 **Note**: If the image is broken, you can use the one in this lesson's `assets` folder or use a search engine to find another image.
 
-Oh! The image is huge. Shrink them down a bit.
+Oh! The image is huge. You can shrink it down a bit.
 
 ```js
 eggos.style.width = "100%";
@@ -292,7 +298,7 @@ document.querySelectorAll("li")[0].innerText = "Demo Dog Hangout";
 
 ![change first list item](./assets/li-innertext-change.png)
 
-Hopefully, all those drills of accessing objects and things within the objects are helping you understand how to access the DOM and where this practice can be applied practically.
+Hopefully, all those drills of accessing arrays of objects and items within the objects are helping you understand how to access the DOM and where this practice can be applied practically.
 
 Try a different one:
 
@@ -321,55 +327,55 @@ DOM commands fall into a few broad categories:
 - Editing the DOM
 - Traversal (related to search) - navigating the DOM
 
-You will only need a small handful of these commands for now. Here is a sample:
+You will only need a small handful of these commands for now. Some method names make it clear what they do, like `createElement`. For the ones that are unclear, take the time to look them up or try them. Here is a sample:
 
 #### Create
 
-- document.createElement()
+- `document.createElement()`
 
 #### Append
 
-- node.append()
-- node.prepend()
-- node.before()
-- node.after()
+- `node.append()`
+- `node.prepend()`
+- `node.before()`
+- `node.after()`
 
 #### Search/Query/Read
 
-- document.querySelector()
-- document.getElementById()
-- document.getElementsByClassName()
-- document.getElementsByName()
+- `document.querySelector()`
+- `document.getElementById()`
+- `document.getElementsByClassName()`
+- `document.getElementsByName()`
 
 #### Editing
 
-- node.appendChild()
+- `node.appendChild()`
   - appends the child to the node
-- node.removeChild()
+- `node.removeChild()`
   - removes the child from the node
-- node.innerText
+- `node.innerText`
   - either gets or sets the the innerText of the node
-- node.setAttribute()
+- `node.setAttribute()`
   - sets an attribute on an HTML element
-- node.getAttribute()
+- `node.getAttribute()`
   - gets an attribute value from an HTML element
-- node.removeAttribute()
+- `node.removeAttribute()`
   - removes an attribute from an HTML element
-- node.classList
+- `node.classList`
   - Methods specifically for manipulating classes
-    - classList.remove()
-    - classList.add()
-    - classList.toggle()
-- node.innerHTML
+    - `classList.remove()`
+    - `classList.add()`
+    - `classList.toggle()`
+- `node.innerHTML`
   - either gets or sets the innerHTML of the node
-- node.id
+- `node.id`
   - either gets or sets the id of the node
 
 #### Traversal
 
-- node.parentNode
-- node.childNodes
-- node.children
-- node.firstChild
+- `node.parentNode`
+- `node.childNodes`
+- `node.children`
+- `node.firstChild`
 
 > **Note**: `node` is a generic term for any HTML element/DOM object.

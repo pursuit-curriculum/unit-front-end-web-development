@@ -53,11 +53,13 @@ hearts.textContent = hearts.textContent.slice(0, -1);
 
   - [MDN: Node.parentNode](https://developer.mozilla.org/en-US/docs/Web/API/Node/parentNode)
 
-Recall that moving through the DOM is called traversal. It's important to limit traversal, so that your code does not end up too brittle.
+Recall that moving through the DOM is called traversal. While traversal is a vital feature of the DOM methods. It's also important to limit traversal, when possible, so that your code does not end up too brittle.
 
 For example, if you did something like `element.parentNode.parentNode.children[1]` and, later, you moved the buttons to be below the hearts, your code would break and you would have to rewrite your JavaScript code.
 
-Note that you can call `.querySelector()` on individual nodes, which can help you write code is more easily maintained. Now if you move the hearts above the buttons, it won't break the code. The link below describes how this works.
+Note that you can call `.querySelector()` on individual nodes instead of `document`, which can help you write code is more easily maintained. When you call `.querySelector()` on a node, that node now serves as the root and the query will only look at elements inside the selected node.
+
+Now, if you were to move the hearts above the buttons, it won't break the code. The link below describes in more detail how this works.
 
 - [MDN: Element.querySelector()](https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelector)
 

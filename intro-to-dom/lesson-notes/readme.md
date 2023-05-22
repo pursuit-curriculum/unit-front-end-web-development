@@ -4,17 +4,17 @@
 
 By the end of this lesson, you should be able to:
 
-- Understand how HTML can be drawn as a tree
-- Relate HTML elements to parents, children, and siblings
-- Define the DOM
-- Explain what role the DOM plays on a web page
-- Connect an external JavaScript file to an HTML file
-- Explain what the attribute `defer` does and why it is needed
+- Understand how HTML can be drawn as a tree.
+- Relate HTML elements to parents, children, and siblings.
+- Define the DOM.
+- Explain what role the DOM plays on a web page.
+- Connect an external JavaScript file to an HTML file.
+- Explain what the attribute `defer` does and why it is needed.
 - Identify common DOM manipulation patterns:
-- query for an element
-- edit an element
-- add an element
-- remove an element
+- Query for an element.
+- Edit an element.
+- Add an element.
+- Remove an element.
 
 ---
 
@@ -24,11 +24,11 @@ Begin by forking the following GitHub repository.
 
 - [Starter Code](https://github.com/pursuit-curriculum-resources/starter-intro-to-dom)
 
-## Guiding questions
+> **Note**: There are two different pages to reference: dog and nameplate. The first set of questions will reference the dog page. The second will be for the nameplate.
 
-There are two different pages to reference: dog and nameplate. The first set of questions will reference the dog page. The second will be for the nameplate.
+## Dog Page
 
-### Dog Page
+### Guiding questions
 
 - What adjective describes native (to the browser)JavaScript methods for DOM manipulation?
 
@@ -36,9 +36,9 @@ There are two different pages to reference: dog and nameplate. The first set of 
 
 - At least four different methods allow you to attach elements you've created to the DOM. What are those methods, and how do they differ from one another? (If you don't remember them, how can you look them up?)
 
-- In the repl, write code in the `script.js` file that adds a `span` element to the `h1` element currently on the page. The `span` element should come _after_ the text.
+- In your app, write code in the `script.js` file that adds a `span` element to the `h1` element currently on the page. The `span` element should come _after_ the text.
 
-- In the repl, update your code so the following text appears inside the `span` element. What attribute can you use to set this text?
+- In your app, update your code so the following text appears inside the `span` element. What attribute can you use to set this text?
 
 ```
 (They're all good dogs!)
@@ -65,7 +65,7 @@ There are two different pages to reference: dog and nameplate. The first set of 
 - Change the `src` attribute to be equal to `https://placedog.net/500/441`.
 - Change the name of the dog. Update the `alt` attribute and the `h2` element with the new name.
 - Change the description for the dog.
-- Add a " featured " class to the `article` element.
+- Add a `featured` class to the `article` element.
 
 - At this point, you likely have a lot of duplicate code. What are some of the issues with having so much duplicated code?
 
@@ -94,11 +94,11 @@ Next, loop over the array. Inside the loop, use the code you've written to creat
 
 ![Image showing a completed dog tutorial.](../assets/completed-dog-tutorial.png)
 
-### Nameplate
+## Nameplate
 
-Go to the nameplate page on the website. Replace "Your Name" with your actual name and input your birthday. (Don't worry, no one else will look at this.)
+Go to the nameplate page on the websiyour appace "Your Name" with your actual name and input your birthday. (Don't worry, no one else will look at this.)
 
-## Guiding questions
+### Set up
 
 - Connect the `script.js` file to the `index.html` page by adding a `script` element. What attributes are needed on the `script` element to do this?
 
@@ -107,6 +107,8 @@ Go to the nameplate page on the website. Replace "Your Name" with your actual na
 ```js
 console.log("Just testing...");
 ```
+
+### Guiding questions
 
 - What does `document` represent?
 

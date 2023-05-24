@@ -81,6 +81,8 @@ You would set the property (`color`) within the curly braces and value (`blue`).
 </style>
 ```
 
+> **Note**: Does this syntax look familiar? What data structure does it most closely represent?
+
 This rule will cascade down from the body into all the elements inside. It doesn't matter if the text is in an `h1` element or a `p` element or if it is directly in the body or nested inside several other HTML elements.
 
 However, you might decide that your `h1` should be orange. In which case, you would write a new declaration.

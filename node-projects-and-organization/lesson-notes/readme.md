@@ -258,7 +258,7 @@ There are three possibilities when comparing values. To sort the items in alphab
 
 - `a` is smaller than `b`. Therefore it must move to the left. In order to move it to the left, we will return a value of `-1`.
 - `a` is larger than `b`. Therefore it must move to the right. In order to move it to the right, we will return a value of `1`.
-- `a` and `b` are the same. Therefore the order should not d. We will return a value of 0.
+- `a` and `b` are the same. Therefore the order should not change. We will return a value of 0.
 
 #### Complete the function
 

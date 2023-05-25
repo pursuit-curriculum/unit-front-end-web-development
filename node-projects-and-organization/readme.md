@@ -25,7 +25,7 @@ It's essential to know that Node.js and npm are two separate programs. Node.js i
 
 ## Creating a Node.js project
 
-> **Note:** When creating a new Node.js project, ensure you are not already inside a git repository. You can check by running `git status`. If you get the following message:
+> **Note**: When creating a new Node.js project, ensure you are not already inside a git repository. You can check by running `git status`. If you get the following message:
 
 > > fatal: not a git repository (or any of the parent directories): .git
 
@@ -228,7 +228,7 @@ import importedMessage from "./messages";
 console.log(importedMessage.message);
 ```
 
-It is also possible to get the other object with destructuring:
+It is also possible to get the other value with destructuring:
 
 ```js
 const { message, anotherMessage } = require("./messages.js");
@@ -237,7 +237,7 @@ console.log(message);
 console.log(anotherMessage);
 ```
 
-You can also rename the objects. This can help shorten variable names or create new variable names that clarify the code.
+You can also rename the incoming values. This can help shorten variable names or create new variable names that clarify the code.
 
 ```js
 const { message: hello, anotherMessage } = require("./messages.js");

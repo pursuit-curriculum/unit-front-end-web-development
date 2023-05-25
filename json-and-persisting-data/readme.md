@@ -223,8 +223,8 @@ We get an error because the file is empty. We can write logic to create an empty
 ```js
 // helpers.js
 function readJSONFile(path, fileName) {
-  const object = readFileSync(`${path}/${fileName}`, "utf8");
-  return object ? object : [];
+  const collection = readFileSync(`${path}/${fileName}`, "utf8");
+  return collection ? collection : [];
 }
 ```
 
@@ -235,8 +235,8 @@ Return to the `helpers` file and update the `readJSONFile()` function to convert
 ```js
 // helpers.js
 function readJSONFile(path, fileName) {
-  const object = readFileSync(`${path}/${fileName}`, "utf8");
-  return object ? JSON.parse(object) : [];
+  const collection = readFileSync(`${path}/${fileName}`, "utf8");
+  return collection ? JSON.parse(collection) : [];
 }
 ```
 
@@ -324,8 +324,8 @@ module.exports = { createRandomProduct, randomProductFactory };
 const { readFileSync, writeFileSync } = require("node:fs");
 
 function readJSONFile(path, fileName) {
-  const object = readFileSync(`${path}/${fileName}`, "utf8");
-  return object ? JSON.parse(object) : [];
+  const collection = readFileSync(`${path}/${fileName}`, "utf8");
+  return collection ? JSON.parse(collection) : [];
 }
 
 function writeJSONFile(path, fileName, data) {

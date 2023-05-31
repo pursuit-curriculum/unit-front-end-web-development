@@ -112,12 +112,8 @@ sequence:
       pursuit_path: user-experience-and-design
       kind: lesson
       activity: repository
-    - name: Request Response Cycle
-      pursuit_path: request-response-cycle
-      kind: lesson
-      activity: repository
-    - name: API Calls with Postman
-      pursuit_path: api-calls-with-postman
+    - name: Request Response Cycle & API Calls with Postman
+      pursuit_path: request-response-cycle-api-postman
       kind: lesson
       activity: repository
     - name: API Calls with Fetch & Promises

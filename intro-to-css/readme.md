@@ -196,13 +196,12 @@ One of the most common ways to declare a color is using a hexadecimal color. Hex
 
 Another way you can set color is using RGB(A) (red, green, blue, alpha), which also let's you set a range of red, green, and blue. Additionally, this property let's you set an alpha value (between 0 and 1, where 0 is none and 1 is 100%) which will allow you to make things transparent.
 
-- Black's hex code is `rgb()`.
-- White's hex code of `rgb()`.
+- Black's hex code is `rgb(0, 0, 0)`.
+- White's hex code of `rgb(255, 255, 255)`.
 - Reddest red's hex code is `rgb(255, 0, 0)`, the first two positions the code represent how red something is.
 - Bluest blue's hex code is `rgb(0, 0, 255)` the last two positions represent how blue something is.
 - Greenest green's hex code is `rgb(0, 255, 0)`, the middle two positions represent how green something is.
 - Black with 50% transparency is `rgba(0,0,0, .5)`
-
 
 #### Font family
 
@@ -277,7 +276,7 @@ You can also search for `lorem Ipsum generator`, which will provide several webs
 
 ### Learning as you go
 
-The basics of CSS are simple to learn. However, there are hundreds of properties! The best way to learn beyond the basics is to use a search engine and search for what you want to accomplish and look at code examples. You will continue to encounter new rules all the time and that's normal with coding. Learning from someone else's code is a key skill. 
+The basics of CSS are simple to learn. However, there are hundreds of properties! The best way to learn beyond the basics is to use a search engine and search for what you want to accomplish and look at code examples. You will continue to encounter new rules all the time and that's normal with coding. Learning from someone else's code is a key skill.
 
 Rules that you use regularly, you will naturally memorize. You will look up the rules you use infrequently as you need them, and that's fine!
 

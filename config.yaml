@@ -129,7 +129,10 @@ sequence:
       pursuit_path: front-end-portfolio
       kind: project
       activity: repository
-      points_possible: 100
+      points_possible: 80
+    - name: Front-end Portfolio Project Presentation
+      kind: project
+      points_possible: 20
     - name: End of Unit Reflection
       elements:
         - kind: deck

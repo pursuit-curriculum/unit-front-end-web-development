@@ -22,7 +22,7 @@ By the end of this lesson, you should be able to:
 
 ## How does the internet work?
 
-Your browser (a client) makes a request to a server whenever you click on a link or go to a website. For example, when you click on a link to load this webpage, your browser makes a request to GitHub. Then GitHub's servers received your request and responded with the data required to render this view.
+Your browser (a client) makes a request to a server whenever you click on a link or go to a website. For example, when you click on a link to load this webpage, your browser makes a request to GitHub. Then GitHub's servers receive your request and respond with the data required to render this view.
 
 This, in a nutshell, is the request-response cycle. It is a pattern where one program asks another program for some data. If the second program responds, the process is complete. To better understand how the request-response cycle relates to how the Internet works, it's helpful to learn about some of the different pieces of architecture that make up the Internet.
 
@@ -56,7 +56,7 @@ Depending on what's in the HTML, the browser may make more requests. For example
 
 #### Server
 
-A server is any program that can receive a request and send a response. A server can be any computer, but typically, there are specialized computers that work as servers. Unlike your laptop, which can go to sleep or is offline when you take it somewhere, servers are computers designed to stay powered up and online all the time. Each website has one or more servers that respond to each request made by a client.
+A server is any program that can receive a request and send a response. A server can run on any computer, but typically, there are specialized computers that work as servers. Unlike your laptop, which can go to sleep or is offline when you take it somewhere, servers are computers designed to stay powered up and online all the time. Each website has one or more servers that respond to each request made by a client.
 
 When servers receive a request, they will respond in some way. Servers often respond with HTML or JSON. The server may respond with the information needed to display a webpage if the request is valid. If invalid, it may respond with an error of some sort.
 
@@ -152,7 +152,7 @@ Instead, the data goes to the database and can be retrieved from there. Develope
 
 ![Image of someone's GitHub profile page](./assets/someones-github-profile.png)
 
-You interact with the browser that allows you to see data or input data with a form.
+You typically interact with the browser that allows you to see data or input data through forms.
 
 ## Request-response cycles
 
@@ -182,7 +182,7 @@ Some developers are happy to develop APIs and share them. However, the cost of m
 
 For ease of learning, starting with a free API that requires no authentication (account registration and utilization of a key (similar to a password) or any other setup) is best. Later, once you understand the basics, you can choose APIs that require more setup for projects.
 
-Here is a list of [public APIs](https://github.com/public-apis/public-apis#animals).
+Here is a list of [public APIs](https://github.com/public-apis/public-apis).
 
 When starting, check the list and choose one with no auth and no CORS, like Cat Facts, so you can focus your learning on the fundamentals before adding more complications. Be aware these services can change at any time. So if one doesn't work, try another one.
 

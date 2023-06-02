@@ -117,9 +117,10 @@ sequence:
       kind: lesson
       activity: repository
     - name: API Calls with Fetch & Promises
-      pursuit_path: api-calls-with-fetch
+      pursuit_path: api-calls-with-promises-and-fetch
       kind: lesson
       activity: repository
+      starter: api-calls-with-promises-and-fetch
     - name: Design Assets
       pursuit_path: design-assets
       kind: lesson

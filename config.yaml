@@ -125,7 +125,7 @@ sequence:
       pursuit_path: design-assets
       kind: lesson
       activity: repository
-    - name: Front-end Portfolio Project
+    - name: Front-end Portfolio
       pursuit_path: front-end-portfolio
       kind: project
       activity: repository

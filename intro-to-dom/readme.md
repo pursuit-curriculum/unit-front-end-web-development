@@ -343,6 +343,9 @@ You will only need a small handful of these commands for now. Some method names 
 #### Search/Query/Read
 
 - `document.querySelector()`
+  - `node.querySelector()` 
+- `document.querySelectorAll()`
+  - `node.querySelectorAll()`
 - `document.getElementById()`
 - `document.getElementsByClassName()`
 - `document.getElementsByName()`

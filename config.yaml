@@ -31,6 +31,7 @@ sequence:
     - name: JSON and Persisting Data
       pursuit_path: json-and-persisting-data
       kind: lesson
+      activity: repository
     - name: Command-line CRUD Application
       pursuit_path: command-line-crud-application
       kind: lesson
@@ -55,6 +56,7 @@ sequence:
           pursuit_path: deployment
           pursuit_subpath: github-pages
         - kind: recording
+    # Removed front-end testing in favor of deployment
     # - name: Understanding Front-end Tests
     #   pursuit_path: understanding-front-end-tests
     #   kind: lesson

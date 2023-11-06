@@ -3,49 +3,17 @@ details:
   repository_name: unit-front-end-web-development
 
 sequence:
-  JavaScript Applications:
+  HTML & CSS:
     - name: Unit 2 Launch
       elements:
         - kind: deck
         - kind: recording
-    - name: Introduction to Code Track
-      pursuit_path: intro-to-codetrack
-      kind: lesson
-      activity: repository
-    - name: Collaborative Programming
-      pursuit_path: collaborative-programming
-      kind: lesson
-      activity: repository
-    - name: Node Projects and Organization
-      pursuit_path: node-projects-and-organization
-      kind: lesson
-      activity: repository
-    - name: NPM Packages
-      pursuit_path: npm-packages
-      kind: lesson
-      activity: repository
-    - name: Test with Jest
-      pursuit_path: test-with-jest
-      kind: lesson
-      activity: repository
-    - name: JSON and Persisting Data
-      pursuit_path: json-and-persisting-data
-      kind: lesson
-      activity: repository
-    - name: Command-line CRUD Application
-      pursuit_path: command-line-crud-application
-      kind: lesson
-      activity: repository
-    - name: Error Handling
-      pursuit_path: error-handling
-      kind: lesson
-      activity: repository
-    - name: Command Line Inventory Application
-      pursuit_path: command-line-inventory-app
-      kind: project
-      activity: repository
-      points_possible: 100
-  HTML & CSS:
+    - name: Deploy with GitHub Pages
+      elements:
+        - kind: guide
+          pursuit_path: deployment
+          pursuit_subpath: github-pages
+        - kind: recording
     - name: Introduction to HTML
       pursuit_path: intro-to-html
       kind: lesson
@@ -56,11 +24,6 @@ sequence:
           pursuit_path: deployment
           pursuit_subpath: github-pages
         - kind: recording
-    # Removed front-end testing in favor of deployment
-    # - name: Understanding Front-end Tests
-    #   pursuit_path: understanding-front-end-tests
-    #   kind: lesson
-    #   activity: ~ # none
     - name: Introduction to Forms
       pursuit_path: intro-to-forms
       kind: lesson
@@ -105,6 +68,7 @@ sequence:
       kind: project
       activity: repository
       points_possible: 100
+
   Complex Web Applications:
     - name: Application Planning
       pursuit_path: app-planning
@@ -134,6 +98,122 @@ sequence:
       points_possible: 80
     - name: Front-end Portfolio Project Presentation
       kind: project
+      points_possible: 20
+  Rendering & Interactivity:
+    - name: Employment Connection
+      elements:
+        - kind: deck
+        - kind: recording
+    - name: ESM Modules
+      pursuit_path: esm-modules
+      kind: lesson
+      activity: ~ # none - focus on reading intro to React pre-reading
+    - name: Introduction to React
+      pursuit_path: intro-to-react
+      kind: lesson
+      activity: repository
+    - name: React Deployment
+      pursuit_path: react-deployment
+      kind: lesson
+      activity: repository
+    - name: React Props
+      pursuit_path: react-props
+      kind: lesson
+      activity: repository
+      starter: react-props
+    - name: React State - Booleans, Numbers, & Strings
+      pursuit_path: react-state-primitive-values
+      kind: lesson
+      activity: repository
+    - name: React State - Objects
+      pursuit_path: react-state-objects
+      starter: react-state-objects
+      kind: lesson
+      activity: ~ # none, continue last lab
+    - name: React Forms
+      pursuit_path: react-forms
+      kind: lesson
+      starter: react-forms
+      activity: repository
+    - name: React Lifting State
+      pursuit_path: react-lifting-state
+      kind: lesson
+      activity: repository
+      starter: react-lifting-state
+    - name: React Student Dashboard
+      pursuit_path: student-dashboard
+      activity: repository
+      kind: project
+      points_possible: 100
+  Asynchronous Actions:
+    - name: React Lifecycle Methods & Networking in React
+      pursuit_path: react-lifecycle-networking
+      kind: lesson
+      activity: repository
+      starter: react-lifecycle-networking
+    - name: Routing in React
+      pursuit_path: react-router
+      kind: lesson
+      activity: repository
+      starter: react-router
+    - name: React CRUD (Multi-part lesson and lab)
+      pursuit_path: react-crud
+      kind: lesson
+      activity: repository
+      starter: television-shows-api
+      # There is a react app starter code but it is the lab for these lessons
+    - name: Introduction to Bootstrap with React
+      pursuit_path: intro-to-bootstrap-w-react
+      kind: lesson
+      activity: repository
+      starter: intro-to-bootstrap-w-react
+    - name: Project Workflow with Teams
+      elements:
+        - kind: reading
+          pursuit_path: project-workflow
+    - name: Collaboration with GitHub
+      pursuit_path: collaboration-with-github
+      kind: lesson
+      activity: repository # combined lab for this lesson and merge conflicts
+    - name: Merge Conflicts
+      pursuit_path: merge-conflicts
+      kind: lesson
+      activity: ~ # none
+    - name: Group Norms and Teamwork
+      pursuit_path: group-norms-and-teamwork
+      kind: lesson
+      activity: canvas_text
+      activity_description: |
+        <p>To complete this lab, you must work with your partner(s) to establish group norms for your project.</p>
+
+        <ul> 
+          <li>Read and discuss Group Norms</li>
+          <li>Read and discuss Working in Groups</li>
+          <li>Review the Working in Teams project rubric and discuss how your group norms will help you succeed with this project.
+          <li>Create group norms based on your discussions. Add them to a Google doc which is accessible by both your team members and your instructors.</li>
+          <p>Be sure to cover:</p>
+          <ul>
+            <li>Everyone's work hours outside of class time.</li>
+            <li>Best methods of communication, in and out of class.</li>
+            <li>How the group will communicate when a task is done, or when someone is blocked.</li>
+          </ul>
+        </ul>
+        <p>Be sure to submit this assignment before starting on your app.</p>
+        <p>If you finish early, get started with:</p>
+        <ul>
+          <li>User stories</li>
+          <li>Wireframes</li>
+          <li>Creating a GitHub repository with a new React app and setting up collaborators</li>
+        </ul>
+    - name: React YouTube Clone Project
+      pursuit_path: youtube-clone
+      kind: project
+      activity: repository
+      points_possible: 80
+    - name: React YouTube Clone Teamwork
+      pursuit_path: youtube-clone
+      kind: project
+      activity: repository
       points_possible: 20
     - name: End of Unit Reflection
       elements:
